@@ -1,4 +1,9 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './components/css/style.css'
+import './components/css/animate.css'
+import './components/css/bootstrap.css'
+import  './components/css/flexslider.css'
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
