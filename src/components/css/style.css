@@ -116,6 +116,25 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #fff;
 }
 
+.touch-us{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+ 
+}
+.touchus-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3%;
+  background: #525050;
+  border-radius: 5px;
+  box-shadow:#000 ;
+ 
+}
+
 .btn-success {
   background: #5cb85c;
   color: #fff;
@@ -363,9 +382,9 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5co-header {
   position: absolute;
-  z-index: 1001;
+  z-index: 1000;
   width: 100%;
-  margin: 0px 0 0 0;
+  /* margin: 0px 0 0 0; */
   background: rgba(0, 0, 0, 0.5);
 }
 @media screen and (max-width: 768px) {
@@ -596,6 +615,7 @@ h1, h2, h3, h4, h5, h6, figure {
   -o-box-shadow: 4px 11px 35px -14px rgba(0, 0, 0, 0.5);
   box-shadow: 4px 11px 35px -14px rgba(0, 0, 0, 0.5);
 }
+
 @media screen and (max-width: 768px) {
   #fh5co-hero .flexslider .fh5co-property-brief .fh5co-property-brief-inner .fh5co-box {
     width: 100%;
@@ -605,6 +625,12 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 10px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.09);
   border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+.fh5co-property{
+  box-shadow: 0 10px 14px rgba(0, 0, 0, 0.2);
+}
+.fh5co-property:hover{
+  transform: scaleY(1.1);
 }
 #fh5co-hero .flexslider .fh5co-property-brief .fh5co-property-brief-inner .fh5co-box .fh5co-property-specification strong {
   color: #4CB648;
@@ -919,7 +945,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-agents {
-  background: #4CB648;
+  background: #7d887d;
 }
 #fh5co-agents .fh5co-agent {
   padding: 30px;
@@ -939,7 +965,15 @@ h1, h2, h3, h4, h5, h6, figure {
   -ms-border-radius: 50%;
   border-radius: 50%;
 }
+.fh5co-agent{
+  border-radius: 5px;
+  box-shadow: 0 10px 14px rgba(0, 0, 0, 0.2);
 
+  
+}
+.fh5co-agent:hover{
+  transform: scale(1.1);
+}
 .googleplus-color {
   color: #dc4e41;
 }
@@ -1191,7 +1225,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 7em 0;
   position: relative;
   clear: both;
-  background: #f7f7f7;
+  background: #c7c5c5;
 }
 @media screen and (max-width: 768px) {
   #fh5co-blog {
@@ -1253,12 +1287,12 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-cta, .fh5co-page-title {
+  position: relative;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed;
+  background-attachment: sticky;
   padding: 7em 0;
-  position: relative;
 }
 @media screen and (max-width: 768px) {
   .fh5co-cta, .fh5co-page-title {
@@ -1333,11 +1367,11 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-footer .btn {
   color: #fff;
 }
-#fh5co-footer .float {
+/* #fh5co-footer .float {
   float: left;
   margin-right: 10%;
-}
-#fh5co-footer ul {
+} */
+#fh5co-footer > ul {
   padding: 0;
   margin: 0;
 }
@@ -1691,6 +1725,74 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .js .animate-box {
   opacity: 0;
+ 
+}
+.socailicon{
+  display: flex;
+  /* justify-content: space-between; */
+/* align-items: center;
+ margin: 15px;
+ margin-right: 20px; */
+  /* align-items: center; */ 
+
+
+}
+.agent-card{
+  border-radius: 4px;
+  background-color: #000;
+}
+/*# sourceMappingURL=style.css.map */
+
+.fallback{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  animation:spin 1s infinite linear;
+  border:solid 2vmin transparent;
+  border-radius:50%;
+  border-right-color:#09f;
+  border-top-color:#09f;
+  box-sizing:border-box;
+  height:20vmin;
+  left:calc(50% - 10vmin);
+  position:fixed;
+  top:calc(50% - 10vmin);
+  width:20vmin;
+  z-index:1;
+  &:before {
+    animation:spin 2s infinite linear;
+    border:solid 2vmin transparent;
+    border-radius:50%;
+    border-right-color:#3cf;
+    border-top-color:#3cf;
+    box-sizing:border-box;
+    content:"";
+    height:16vmin;
+    left:0;
+    position:absolute;
+    top:0;
+    width:16vmin;
+  }
+  &:after {
+    animation:spin 3s infinite linear;
+    border:solid 2vmin transparent;
+    border-radius:50%;
+    border-right-color:#6ff;
+    border-top-color:#6ff;
+    box-sizing:border-box;
+    content:"";
+    height:12vmin;
+    left:2vmin;
+    position:absolute;
+    top:2vmin;
+    width:12vmin;
+  }
 }
 
-/*# sourceMappingURL=style.css.map */
+@keyframes spin {
+  100% {
+    transform:rotate(360deg);
+  }
+}
