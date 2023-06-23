@@ -1,10 +1,18 @@
 import './App.css';
 import React, { Suspense } from "react";
-
-import Navbar from './components/Navbar'
-import Index from './components/index'
-import Fallback from './components/Fallback'
-const AboutComponent = React.lazy(() => import('./components/index'));
+import Fallback from './components/layouts/Fallback'
+import LearnMore from './components/layouts/LearnMore'
+import {
+ 
+  Route,
+  Router,
+  BrowserRouter,
+  RouterProvider,
+  Routes,
+} from "react-router-dom";
+import Navbar from './components/layouts/Navbar';
+import InvestorDashboard from './components/layouts/InvestorDashboard';
+const AboutComponent = React.lazy(() => import('./components/layouts/mainpage/index'));
 function App() {
 
 
@@ -12,7 +20,17 @@ function App() {
     <div className="App">
       {/* <Fallback/> */}
       <Suspense fallback={<Fallback/>} >
-        <AboutComponent />
+        <Navbar/>
+        <Routes>
+          <Route path='/' element={  <AboutComponent />} /> 
+          <Route path='/learnmore' element={<LearnMore/>} /> 
+          <Route path='/investordashboard' element={<InvestorDashboard/>} /> 
+
+
+      
+        </Routes>
+        
+      
         </Suspense>
 
 

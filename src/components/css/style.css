@@ -129,7 +129,8 @@ h1, h2, h3, h4, h5, h6, figure {
   align-items: center;
   flex-direction: column;
   padding: 3%;
-  background: #525050;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* background-repeat: no-repeat; */
   border-radius: 5px;
   box-shadow:#000 ;
  
@@ -381,11 +382,14 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-header {
-  position: absolute;
-  z-index: 1000;
+  /* position: absolute; */
+
+  /* z-index: 1000; */
   width: 100%;
+  margin-bottom: 100px;
   /* margin: 0px 0 0 0; */
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: #000;
 }
 @media screen and (max-width: 768px) {
   #fh5co-header {
@@ -562,16 +566,18 @@ h1, h2, h3, h4, h5, h6, figure {
   z-index: 1;
   margin-bottom: 0;
 }
-#fh5co-hero .flexslider .slides {
-  position: relative;
-  overflow: hidden;
+
+/* #fh5co-hero .flexslider .slides {
+  margin-top: 100px;
+   position: relative; 
+   overflow: hidden; 
 }
 #fh5co-hero .flexslider .slides li {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   min-height: 700px;
-}
+} */
 #fh5co-hero .flexslider .flex-control-nav {
   bottom: 40px;
   z-index: 1000;
@@ -630,7 +636,9 @@ h1, h2, h3, h4, h5, h6, figure {
   box-shadow: 0 10px 14px rgba(0, 0, 0, 0.2);
 }
 .fh5co-property:hover{
-  transform: scaleY(1.1);
+  /* outline-color: #118DF0;
+  outline: #a80707; */
+  transform: scale(1.1);
 }
 #fh5co-hero .flexslider .fh5co-property-brief .fh5co-property-brief-inner .fh5co-box .fh5co-property-specification strong {
   color: #4CB648;
@@ -741,8 +749,13 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 0;
 }
 
+
+
 .fh5co-heading {
   margin-bottom: 30px;
+  color:#5bc0de;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 .fh5co-heading h2 {
   margin-bottom: 10px;
@@ -759,7 +772,11 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .fh5co-section-with-image {
   position: relative;
+  background-image:url("../images/bg-images.jpg") ;
+background-size: cover;
+margin-bottom: 100px;
 }
+
 .fh5co-section-with-image .fh5co-box {
   padding: 50px;
   background: rgba(255, 255, 255, 0.9);
@@ -812,7 +829,11 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-section-with-image p:last-child {
   margin-bottom: 0;
 }
+.fh5co-section-with-image {
 
+  background-image:url("../images/bg-images.jpg") ;
+background-size: cover;
+}
 .fh5co-property {
   background: #fff;
   text-align: left;
@@ -906,26 +927,31 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
   border-left: none;
   padding: 20px 20px 20px 20px;
-  background: #fff;
+  background: #c2aaaa;
   float: left;
+  border-radius: 10px;
   width: 100%;
-  -webkit-border-radius: 0px;
+  /* -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
   border-radius: 0px;
   -webkit-box-shadow: 4px 11px 35px -14px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 4px 11px 35px -14px rgba(0, 0, 0, 0.3);
   -ms-box-shadow: 4px 11px 35px -14px rgba(0, 0, 0, 0.3);
-  -o-box-shadow: 4px 11px 35px -14px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 4px 11px 35px -14px rgba(0, 0, 0, 0.3); */
   box-shadow: 4px 11px 35px -14px rgba(0, 0, 0, 0.3);
+}
+.blockquote:hover{
+background: #000;
 }
 #fh5co-testimonial .item-block blockquote p,
 #fh5co-agents .item-block blockquote p {
   font-size: 18px;
   line-height: 1.7;
-  color: #000;
+  /* color: #000; */
   margin-bottom: 10px;
 }
+
 #fh5co-testimonial .item-block blockquote p:last-child,
 #fh5co-agents .item-block blockquote p:last-child {
   margin-bottom: 0;
@@ -945,7 +971,9 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-agents {
-  background: #7d887d;
+  background-image: url('../images//bg-agents.jpg');
+  background-size: cover;
+  /* background: #7d887d; */
 }
 #fh5co-agents .fh5co-agent {
   padding: 30px;
@@ -999,6 +1027,13 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 
+.input-feild:focus{
+color: #3b5998;
+/* background-color: #3cf; */
+outline-color: #4cae4c;
+box-shadow: 0px 0px 35px #3cf;
+transition: 1s;
+}
 .contact-info {
   margin-bottom: 4em;
   padding: 0;
@@ -1225,7 +1260,11 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 7em 0;
   position: relative;
   clear: both;
-  background: #c7c5c5;
+background-image:url("../images/bg-images.jpg") ;
+background-size: cover;
+/* background-position: center; */
+  /* background: #c7c5c5; */
+  
 }
 @media screen and (max-width: 768px) {
   #fh5co-blog {
@@ -1728,7 +1767,7 @@ h1, h2, h3, h4, h5, h6, figure {
  
 }
 .socailicon{
-  display: flex;
+  /* display: flex; */
   /* justify-content: space-between; */
 /* align-items: center;
  margin: 15px;
@@ -1737,6 +1776,10 @@ h1, h2, h3, h4, h5, h6, figure {
 
 
 }
+/* .client-card{
+  border-radius: 10px;
+  background: #af9b9b;
+} */
 .agent-card{
   border-radius: 4px;
   background-color: #000;
@@ -1795,4 +1838,21 @@ h1, h2, h3, h4, h5, h6, figure {
   100% {
     transform:rotate(360deg);
   }
+}
+.divider {
+  border-bottom: 1px solid #000;
+  width: 30%;
+  margin-left: 100px;
+  /* margin: 5px; */
+  margin-bottom: 100px;
+
+}
+
+.investor-cel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+
 }
