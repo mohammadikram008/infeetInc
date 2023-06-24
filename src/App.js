@@ -12,6 +12,8 @@ import {
 } from "react-router-dom";
 import Navbar from './components/layouts/Navbar';
 import InvestorDashboard from './components/layouts/InvestorDashboard';
+import LoginPage from './components/LoginPage';
+import SignUpPage from './components/SignUpPage';
 const AboutComponent = React.lazy(() => import('./components/layouts/mainpage/index'));
 function App() {
 
@@ -25,6 +27,8 @@ function App() {
           <Route path='/' element={  <AboutComponent />} /> 
           <Route path='/learnmore' element={<LearnMore/>} /> 
           <Route path='/investordashboard' element={<InvestorDashboard/>} /> 
+          <Route path='/login' element={<LoginPage/>} /> 
+          <Route path='/signup' element={<SignUpPage/>} /> 
 
 
       
