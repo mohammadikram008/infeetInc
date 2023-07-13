@@ -1,9 +1,11 @@
-import React, { Fragment, useRef, useEffect,useState, createElement } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { Fragment, useRef, useEffect, useState, createElement } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import emailjs from "@emailjs/browser";
+import Skeleton from '../SkeletonComponent'
 import { Col, Row } from 'reactstrap'
+import axios from 'axios';
 import toast, { Toaster } from "react-hot-toast";
 //slider 
 import { UncontrolledCarousel } from 'reactstrap';
@@ -35,29 +37,32 @@ import bgimage from '../../images/bg-images.jpg';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import Navbar from '../Navbar';
 
 const Container = () => {
+    const [cardvalue, setCardValue] = useState("");
     // const { Contact } = content;
     const navigate = useNavigate();
     const [data, setData] = useState('');
-    const handleNavigation = () => {
+    const handleNavigation = (prop) => {
+
+        console.log("prop",prop)
         const storedData = localStorage.getItem('login');
-        
         if (storedData) {
-          // If data exists in local storage, update the component state
-          //   setData(JSON.parse(storedData));
-          navigate('/investordashboard');
-        }else{
+            // If data exists in local storage, update the component state
+            //   setData(JSON.parse(storedData));
+            navigate('/investordashboard',{ state: prop });
+        } else {
             navigate('/login');
         }
-       
-      };
-      const form = useRef();
-      const [value, setValue] = useState({
+
+    };
+    const form = useRef();
+    const [value, setValue] = useState({
         name: "",
         email: "",
         message: "",
-      });
+    });
 
     // Sending Email
     const sendEmail = (e) => {
@@ -65,53 +70,66 @@ const Container = () => {
 
         // console.log(form.current);
         emailjs
-          .sendForm(
-            "service_vwudzb3",
-            "template_8zpkczl",
-            form.current,
-            "LQad53V3lCpEpXeiv"
-          )
-          .then(
-            (result) => {
-              console.log(result);
-              // Clear all input field values
-              form.current.reset();
-              // Success toast message
-              toast.success("Email send Successfully");
-            },
-            (error) => {
-              console.log(error.text);
-              toast.error(error.text);
-            }
-          );
+            .sendForm(
+                "service_vwudzb3",
+                "template_8zpkczl",
+                form.current,
+                "LQad53V3lCpEpXeiv"
+            )
+            .then(
+                (result) => {
+                    console.log(result);
+                    // Clear all input field values
+                    form.current.reset();
+                    // Success toast message
+                    toast.success("Email send Successfully");
+                },
+                (error) => {
+                    console.log(error.text);
+                    toast.error(error.text);
+                }
+            );
     };
     const items = [
         {
             src: `https://azizidevelopments.com/assets/images/projects/1603263070389162780.jpg`,
-            altText: 'Slide 1',
-            caption: 'Slide 1',
-            header: 'Slide 1 Header'
+            // altText: 'Slide 1',
+            // caption: 'Slide 1',
+            header: 'Buying Real State inFeet'
         },
         {
             src: `https://azizidevelopments.com/assets/images/projects/15795279721750900140.jpg`,
-            altText: 'Slide 2',
-            caption: 'Slide 2',
-            header: 'Slide 2 Header'
+            // altText: 'Slide 2',
+            // caption: 'Slide 2',
+            header: 'Sale Real State in Feet'
         },
         {
 
             src: `https://azizidevelopments.com/assets/images/projects/1624972383238283745.jpg`,
-            altText: 'Slide 3',
-            caption: 'Slide 3',
-            header: 'Slide 3 Header'
+            // altText: 'Slide 3',
+            // caption: 'Slide 3',
+            header: 'Hold Real State in Feet'
 
 
 
         }
     ];
+    useEffect(() => {
+        axios.get('http://localhost:3001/api/tasks/')
+            .then((res) => {
+                setCardValue(res);
+            })
+            .catch(error => {
+                console.error('Login error:', error);
+                // setOpen(true);
+                // setMessage({ text: "Invalid username or password", type: "success" });
+            });
+    }, [])
+    console.log('cardvalue', cardvalue);
     return (
         <Fragment>
             <div id="fh5co-page">
+            <Navbar/>
                 {/* header area */}
                 {/* <header id="fh5co-header" role="banner">
                     <div className="container">
@@ -216,7 +234,7 @@ const Container = () => {
                             </div>
                         </aside> */}
 
-                        {/* offer  rent area */}
+                {/* offer  rent area */}
                 <div id="best-deal">
                     <div className="container">
                         <div className="row">
@@ -225,65 +243,97 @@ const Container = () => {
                                 {/* <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p> */}
                             </div>
                             <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
-                                <div className="fh5co-property" onClick={handleNavigation}>
+                                <div className="fh5co-property" >
                                     <figure>
                                         <img src={pro3} alt="Free Website Templates FreeHTML5.co" className="img-responsive" />
                                         <a href="#" className="tag">long term</a>
                                     </figure>
                                     <div className="fh5co-property-innter">
-                                        <h3><a href="#">Villa In Hialeah, Dade County</a></h3>
-                                        <div className="price-status">
-                                            <span className="price">$540,000 </span>
-                                        </div>
-                                        <p>CLick for more details....</p>
-                                        {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dicta magni amet atque doloremque velit unde adipisci omnis hic quaerat.</p> */}
+                                        {
+                                            cardvalue?
+                                        
+                                        cardvalue &&  cardvalue.data.length > 0 &&
+                                            cardvalue.data.slice(0, 1).map((item, index) => (
+                                                <div key={index} onClick={()=>handleNavigation(item)}>
+                                                    <h3><a href="#">{item.appartmentaddres}</a></h3>
+                                                    <div className="price-status">
+                                                        <span className="price">${item.price} </span>
+                                                    </div>
+                                                    <p>CLick for more details....</p>
+                                                    <p className="fh5co-property-specification">
+                                                        <span><strong>{item.area}</strong></span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span>
+                                                    </p>
+                                                </div>
+
+                                            ))
+                                        
+                                    :<Skeleton/>}
+
                                     </div>
-                                    <p className="fh5co-property-specification">
-                                        <span><strong>3500</strong> Sq Ft</span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span> 
-                                    </p>
+
                                 </div>
 
 
                             </div>
                             <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
 
-                                <div className="fh5co-property" onClick={handleNavigation}>
+                                <div className="fh5co-property">
                                     <figure>
                                         <img src={s2} alt="Free Website Templates FreeHTML5.co" className="img-responsive" />
                                         <a href="#" className="tag">short term</a>
                                     </figure>
                                     <div className="fh5co-property-innter">
-                                        <h3><a href="#">15 Apartments Of Type B</a></h3>
-                                        <div className="price-status">
-                                            <span className="price">$2,000</span>
-                                        </div>
-                                        <p>CLick for more details....</p>
-                                        {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dicta magni amet atque doloremque velit unde adipisci omnis hic quaerat.</p> */}
+                                        {
+                                            cardvalue?
+                                        
+                                        cardvalue &&  cardvalue.data.length > 0 &&
+                                            cardvalue.data.slice(1, 2).map((item, index) => (
+                                                <div key={index}  onClick={()=>handleNavigation(item)}>
+                                                    <h3><a href="#">{item.appartmentaddres}</a></h3>
+                                                    <div className="price-status">
+                                                        <span className="price">${item.price} </span>
+                                                    </div>
+                                                    <p>CLick for more details....</p>
+                                                    <p className="fh5co-property-specification">
+                                                        <span><strong>{item.area}</strong></span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span>
+                                                    </p>
+                                                </div>
+
+                                            ))
+                                        :<Skeleton/>}
                                     </div>
-                                    <p className="fh5co-property-specification">
-                                        <span><strong>3500</strong> Sq Ft</span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span>  
-                                    </p>
+
                                 </div>
 
                             </div>
                             <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
 
-                                <div className="fh5co-property" onClick={handleNavigation}>
+                                <div className="fh5co-property" >
                                     <figure>
                                         <img src={pro2} alt="Free Website Templates FreeHTML5.co" className="img-responsive" />
                                         <a href="#" className="tag">self stay</a>
                                     </figure>
-                                    <div className="fh5co-property-innter">
-                                        <h3><a href="#">401 Biscayne Boulevard, Miami</a></h3>
-                                        <div className="price-status">
-                                            <span className="price">$1,540,000</span>
-                                        </div>
-                                        <p>CLick for more details....</p>
-                                        {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dicta magni amet atque doloremque velit unde adipisci omnis hic quaerat.</p> */}
+                                    <div className="fh5co-property-innter" >
+                                      {
+                                        cardvalue?
+                                      
+                                        cardvalue &&  cardvalue.data.length > 0 &&
+                                            cardvalue.data.slice(2).map((item, index) => (
+                                                <div key={index} onClick={()=>handleNavigation(item)}>
+                                                    <h3><a href="#">{item.appartmentaddres}</a></h3>
+                                                    <div className="price-status">
+                                                        <span className="price">${item.price} </span>
+                                                    </div>
+                                                    <p>CLick for more details....</p>
+                                                    <p className="fh5co-property-specification">
+                                                        <span><strong>{item.area}</strong> Sq Ft</span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span>
+                                                    </p>
+                                                </div>
+
+                                            ))
+                                        :<Skeleton/>}
                                     </div>
-                                    <p className="fh5co-property-specification">
-                                        <span><strong>3500</strong> Sq Ft</span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span> 
-                                    </p>
+
                                 </div>
                             </div>
 
@@ -299,7 +349,7 @@ const Container = () => {
                     <div className="fh5co-box animate-box">
                         <h2>Security, Comfort, &amp; Convenience</h2>
                         <p>How are our properties different from your average fractionalized real estate projects?</p>
-                        <p><a href="/learnmore" className="btn btn-primary btn-outline with-arrow">Learn more... <i className="icon-arrow-right"></i></a></p>
+                        <p><Link to="/learnmore" className="btn btn-primary btn-outline with-arrow">Learn more... <i className="icon-arrow-right"></i></Link></p>
                     </div>
 
                 </div>
@@ -390,7 +440,7 @@ const Container = () => {
                         </div>
                     </div>
                     <div className="touch-us">
-                    <Toaster />
+                        <Toaster />
                         <form
                             ref={form}
                             onSubmit={sendEmail}
@@ -440,13 +490,13 @@ const Container = () => {
                 </div> */}
 
 
-                        {/* footer */}
+                {/* footer */}
                 <footer id="fh5co-footer" role="contentinfo">
                     <div className="container">
                         <div className="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
                             <h3>What We Do</h3>
                             <p className='text-white'>InFeet Inc. is a multinational property fractionalization firm that  aims to make investments in real estate more accessible by offering investments "in feet" </p>
-                            <p><a href="#" className="btn btn-primary btn-outline with-arrow btn-sm"><ArrowCircleUpIcon fontSize='large'/> </a></p>
+                            <p><a href="#" className="btn btn-primary btn-outline with-arrow btn-sm"><ArrowCircleUpIcon fontSize='large' /> </a></p>
                         </div>
                         <div className="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
                             <h3>Our Services</h3>
@@ -468,11 +518,11 @@ const Container = () => {
                         <div className="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
                             <h3>Follow Us</h3>
                             <ul className="socailicon">
-                                <li ><a href="#"><FacebookOutlinedIcon  fontSize='large'/></a></li>
-                                <li ><a href="#"><TwitterIcon fontSize='large'/></a></li>
-                                <li><a href="#"><InstagramIcon fontSize='large'/></a></li>
-                                <li><a href="#"><LinkedInIcon fontSize='large'/></a></li>
-                              
+                                <li ><a href="#"><FacebookOutlinedIcon fontSize='large' /></a></li>
+                                <li ><a href="#"><TwitterIcon fontSize='large' /></a></li>
+                                <li><a href="#"><InstagramIcon fontSize='large' /></a></li>
+                                <li><a href="#"><LinkedInIcon fontSize='large' /></a></li>
+
                             </ul>
                         </div>
                         <div className="col-md-12 fh5co-copyright text-center text-white">

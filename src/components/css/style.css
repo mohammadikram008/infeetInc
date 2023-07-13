@@ -556,7 +556,10 @@ h1, h2, h3, h4, h5, h6, figure {
   -o-transform: scaleX(1);
   transform: scaleX(1);
 }
-
+.first-col-login{
+  background-image:url("../images/bg-images.jpg") ;
+  background-size: cover;
+}
 #fh5co-hero {
   min-height: 700px;
   background: #fff url(../images/loader.gif) no-repeat center center;
@@ -633,6 +636,7 @@ h1, h2, h3, h4, h5, h6, figure {
   border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 }
 .fh5co-property{
+  
   box-shadow: 0 10px 14px rgba(0, 0, 0, 0.2);
 }
 .fh5co-property:hover{
@@ -894,6 +898,9 @@ background-size: cover;
 }
 .fh5co-property .price-status {
   margin-bottom: 20px;
+}
+.fh5co-property-innter{
+background: #c2c3c5;
 }
 .fh5co-property .price-status .price {
   font-size: 28px;
@@ -1849,10 +1856,10 @@ background-size: cover;
 }
 
 .investor-cel{
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column; */
   border: 1px solid black;
 
 }

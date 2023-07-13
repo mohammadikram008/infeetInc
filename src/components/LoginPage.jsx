@@ -2,8 +2,9 @@ import React, { Fragment, useState } from 'react'
 import { Col, Row } from 'reactstrap'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import bgimg from '../components/images/bg-images.jpg'
 import Snackbar from './layouts/SnackBar'
+import Navbar from './layouts/Navbar';
 const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -36,10 +37,10 @@ const LoginPage = () => {
                 console.log('Logged in successfully', response.data);
                 localStorage.setItem('login', JSON.stringify(response.data));
                 setData(response.data);
-              
+
                 setOpen(true);
                 setMessage({ text: "login successfully ", type: "success" });
-                  navigate('/');
+                navigate('/');
 
             })
             .catch(error => {
@@ -53,11 +54,12 @@ const LoginPage = () => {
 
 
     return (
-        <Fragment>
-             <Snackbar open={open} message={message} setOpen={setOpen} />
-            <Row className='m-0'>
-
-                <Col md="4"></Col>
+        <Fragment >
+            <Navbar/>
+            <Snackbar open={open} message={message} setOpen={setOpen} />
+            <Row className='m-0' >
+                <Col md="4" className=''>
+                </Col>
                 <Col md="4">
                     <div>
 
@@ -69,13 +71,15 @@ const LoginPage = () => {
 
                             <h1>Login Form</h1>
                             <input
-                                type="text" value={username} onChange={handleUsernameChange}
+                                type="email" value={username} onChange={handleUsernameChange}
                                 required
+                                placeholder='Email here'
                                 className="input-feild border border-slate-600 mt-4 p-3 rounded"
                             />
                             <input
                                 type="password" value={password} onChange={handlePasswordChange}
                                 required
+                                placeholder='Password here'
                                 className="input-feild border border-slate-600 mt-4 p-3 rounded "
                             />
 
@@ -101,7 +105,6 @@ const LoginPage = () => {
                     </div>
                 </Col>
                 <Col md="4"></Col>
-           
             </Row>
         </Fragment>
     )

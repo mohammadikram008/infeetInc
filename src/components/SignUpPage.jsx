@@ -3,6 +3,7 @@ import { Col, Row } from 'reactstrap'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Snackbar from './layouts/SnackBar'
+import Navbar from './layouts/Navbar';
 const SignUpPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -42,14 +43,15 @@ const SignUpPage = () => {
             })
             .catch(error => {
                 // Handle login error
-                setError('Invalid username or password');
+                setError('This email is already register ,please try another one!');
                 setOpen(true);
-                setMessage({ text: "Invalid username or password", type: "success" });
+                setMessage({ text: "This email is already register ,please try another one!", type: "success" });
                 console.error('Login error:', error);
             });
     };
   return (
     <Fragment>
+          <Navbar/>
     <Row className='m-0'>
     <Snackbar open={open} message={message} setOpen={setOpen} />
         <Col md="4"></Col>
@@ -64,13 +66,15 @@ const SignUpPage = () => {
 
                             <h1>Registeration Form</h1>
                             <input
-                                type="text" value={username} onChange={handleUsernameChange}
+                                type="email" value={username} onChange={handleUsernameChange}
+                                placeholder='Email here'
                                 required
                                 className="input-feild border border-slate-600 mt-4 p-3 rounded"
                             />
                             <input
                                 type="password" value={password} onChange={handlePasswordChange}
                                 required
+                                placeholder='Password here'
                                 className="input-feild border border-slate-600 mt-4 p-3 rounded "
                             />
 
@@ -80,7 +84,7 @@ const SignUpPage = () => {
                             >
                                 Sign Up
                             </button>
-                            <a href='/signup' className='text-white'><p>Already have account!</p></a>
+                            <a href='/login' className='text-white'><p>Already have account!</p></a>
                         </form>
             </div>
         </Col>

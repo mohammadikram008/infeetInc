@@ -8,13 +8,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  Router,
+
   BrowserRouter,
-  RouterProvider,
-  Routes,
+ 
 } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
