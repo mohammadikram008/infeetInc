@@ -1,0 +1,45 @@
+.contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -15px;
+    height: 61vh;
+    background: url('../../components/assets/images/background.jpg') no-repeat center center/cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* // background-color: black; */
+
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 10px;
+    width: 30%;
+    height: 60%;
+    opacity: .8;
+    
+
+}
+
+#root {
+    display: block;
+    flex-wrap: wrap;
+}
+
+
+@media (max-width: 450px) {
+    .input-contact {
+        width: 100%;
+
+    }
+    .form{
+        width:90%;
+        padding: 30px;
+        height: 70%;
+    }
+}

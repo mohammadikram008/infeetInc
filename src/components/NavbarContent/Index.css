@@ -1,0 +1,46 @@
+.list-container {
+    display: flex;
+    width: 30%;
+}
+
+.main-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.submenu {
+    color: black;
+    list-style: none;
+
+
+
+}
+
+.submenu li a {
+    text-decoration: none;
+    color: rgb(180, 182, 184);
+
+
+}
+
+.submenu h3 {
+    color: brown;
+}
+
+.submenu li {
+    margin-top: 10px;
+}
+
+.title a {
+
+
+    text-decoration: none;
+    color: rgb(180, 182, 184);
+    margin: 10px;
+
+
+
+}

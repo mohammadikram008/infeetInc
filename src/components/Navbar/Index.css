@@ -1,0 +1,140 @@
+* {
+    margin: 0px;
+}
+
+.nav-item:hover{
+    /* // background: #d2d4c9; */
+    color: white;
+    box-shadow: 0 0 5px #E3CBA8,
+    0 0 5px #E3CBA8,
+    0 0 5px #E3CBA8,
+    0 0 5px #E3CBA8;
+    /* // -webkit-box-reflect: below 1px linear-gradient(transparent,#0005); */
+}
+.nav-bar {
+    height: 80px;
+   
+    /* overflow-x: hidden; */
+
+}
+.logo-img{
+    margin-right: 10px;
+    width:60px;
+}
+.nav-items:hover{
+    background-color:#4c4d50;
+    border-radius: 10px;
+    
+
+}
+
+@media (max-width: 700px) {
+    .nav-open-btn {
+        background: yellow;
+
+        .ham {
+            height: 4px;
+            width: 46px;
+            border-radius: 2px;
+            margin: 4px 0px;
+            background-color: #6F85C3;
+        }
+    }
+
+    #active {
+        border-radius: none;
+
+        &:first-child {
+            width: 46 + 13.473;
+            translate: 0px 6.834px;
+            transform: rotate(-45deg);
+        }
+
+        &:nth-child(2) {
+            display: none;
+        }
+
+        &:nth-child(3) {
+            width: 46 + 13.463;
+            translate: 0px -6.834px;
+            transform: rotate(45deg);
+        }
+    }
+
+    .nav-bar-open {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .nav-bar-container {
+        flex-direction: column;
+    }
+
+    .toolbar {
+        position: absolute;
+        top: 80px;
+        flex-direction: column;
+        width: 100%;
+        left: 0px;
+        text-align: center;
+        height: 500px;
+    }
+
+    .toolbar-navopen {
+        display: none;
+    }
+
+    .toolbar-btn {
+        height: 58px;
+        margin: auto auto;
+        text-decoration: none;
+        color: black;
+    }
+  
+
+    .nav-home-link {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    #nav-btn-open {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+    }
+
+}
+
+.log-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+   
+}
+.log-div  img{
+    width: 50px;
+    border-radius: 50%;
+
+}
+.log-div h1{
+    font-size: 26px;
+    margin-left: 5px;
+    color: #f3f5f7;
+}
+
+.line{
+    color: #A6A8AA;
+}
+/* // .nav-item{
+//     font-family: PublicSans,sans-serif;
+//     color: black;
+//     // margin: auto 23px";
+//     font-size: 16px;
+//     font-weight:600;
+//     border:1px solid #A6A8AA;
+//     border-radius:10px;
+//     background-color:#E3CBA8;
+// } */
