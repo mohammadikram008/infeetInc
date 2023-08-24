@@ -78,7 +78,8 @@ figure {
 
 .logo-img {
   width: 30px;
-  margin-top: 10px;
+  margin-top: 0px;
+  
   height: 1%;
 }
 
@@ -96,6 +97,31 @@ figure {
   -o-transition: 0.5s;
   transition: 0.5s;
   padding: 4px 20px;
+}
+.upcoming-activities{
+  width: 100%;
+}
+.upcoming-activities h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #ca974b;
+  height: 10vh;
+}
+.activity-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* margin: 20px; */
+}
+.activity-item{
+  margin: 20px;
+}
+.activity-item h3{
+  
+  color: #09f;
 }
 
 .btn.btn-md {
@@ -1088,7 +1114,9 @@ figure {
 .fh5co-property .price-status {
   margin-bottom: 20px;
 }
-
+.head-text{
+  color: #ca974b;
+}
 .fh5co-property-innter {
   background: #e5e6e7;
 }
@@ -1207,8 +1235,6 @@ figure {
 .fh5co-agent {
   border-radius: 5px;
   box-shadow: 0 10px 14px rgba(0, 0, 0, 0.2);
-
-
 }
 
 .fh5co-agent:hover {
@@ -1234,7 +1260,6 @@ figure {
 }
 
 @media screen and (max-width: 768px) {
-
   .fh5co-about,
   .fh5co-team,
   .fh5co-contact {
@@ -2241,4 +2266,37 @@ figure {
   flex-direction: column; */
   border: 1px solid black;
 
+}
+.activity-list{
+  width: 40%;
+}
+/* upcoming-activities.css */
+/* .upcoming-activities {
+  margin-top: 30px;
+} */
+
+.activity-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+flex-direction: column;
+margin-bottom: 100px;
+}
+
+.activity-item h3 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.activity-item p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.news-img{
+  width: 100%;
+  height: 10rem;
 }

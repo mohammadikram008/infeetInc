@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Snackbar from '../layouts/SnackBar'
 import Navbar from '../Navbar/Index';
+import './Index.css'
 const SignUpPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -52,7 +53,7 @@ const SignUpPage = () => {
   return (
     <Fragment>
           <Navbar/>
-    <Row className='m-0'>
+    <Row className=' signin'>
     <Snackbar open={open} message={message} setOpen={setOpen} />
         <Col md="4"></Col>
         <Col md="4">

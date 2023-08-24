@@ -15,14 +15,12 @@ function Index() {
           textAlign: "center",
         }}
       >
-        <Typography variant="h3" margin={"30px auto"} className="heading-about">
+        <Typography variant="h3" margin={"30px auto"} className="heading-about head-text">
         OUR STORY
         </Typography>
         <TextAndContent Content={Content} />
       </Container>
-      <Container>
-        <Typography variant="h3"></Typography>
-      </Container>
+      
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react'
 import { Col, Row } from 'reactstrap'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import './Index.css'
 import bgimg from '../images/bg-images.jpg'
 import Snackbar from '../layouts/SnackBar'
 import Navbar from '../Navbar/Index';
@@ -58,7 +58,7 @@ const LoginPage = () => {
         <Fragment >
             <Navbar/>
             <Snackbar open={open} message={message} setOpen={setOpen} />
-            <Row className='m-0' >
+            <Row className=' login'  >
                 <Col md="4" className=''>
                 </Col>
                 <Col md="4">

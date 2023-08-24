@@ -316,7 +316,7 @@ export default function Navbar() {
                     margin: "auto 23px",
                     fontSize: "16px",
                     fontWeight: "600",
-                    border: "1px solid #A6A8AA",
+                    // border: "1px solid #A6A8AA",
                     borderRadius: "10px",
                     backgroundColor: "white",
                     textTransform: "capitalize",
@@ -337,13 +337,13 @@ export default function Navbar() {
                   className="nav-item"
                   variant="text"
                   style={{
-                    color: "black",
+                    color: "white",
                     margin: "auto 23px",
                     fontSize: "16px",
-                    fontWeight: "600",
-                    border: "1px solid #A6A8AA",
+                    fontWeight: "550",
+                    // border: "1px solid #A6A8AA",
                     borderRadius: "10px",
-                    backgroundColor: "white",
+                    backgroundColor: "#ca974b",
                     textTransform: "capitalize",
                     letterSpacing: "-0.1px"
 
@@ -353,7 +353,7 @@ export default function Navbar() {
 
                 // disableElevation
                 >
-                  Sign in
+                  Register
               {/* <a onClick={clearData }>{data?"Logout":"login"}</a> */}
                 </Button>
               </Link>

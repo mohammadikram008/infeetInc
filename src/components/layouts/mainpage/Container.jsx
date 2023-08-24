@@ -235,7 +235,7 @@ const Container = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-8 col-md-offset-2 text-center  animate-box mb-5" data-animate-effect="fadeIn">
-                                <h2>TRY OUR VIRTUAL TOURS</h2>
+                                <h2 className='head-text'>TRY OUR VIRTUAL TOURS</h2>
                                 {/* <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p> */}
                             </div>
                             <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
@@ -246,8 +246,7 @@ const Container = () => {
                                     </figure>
                                     <div className="fh5co-property-innter">
                                         {
-                                            cardvalue?
-                                        
+                                     cardvalue?
                                         cardvalue &&  cardvalue.data.length > 0 &&
                                             cardvalue.data.slice(0, 1).map((item, index) => (
                                                 <div key={index} onClick={()=>handleNavigation(item)}>
@@ -262,7 +261,6 @@ const Container = () => {
                                                 </div>
 
                                             ))
-                                        
                                     :<Skeleton/>}
 
                                     </div>

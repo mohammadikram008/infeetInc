@@ -1,0 +1,21 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: -150px; */
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: -17px;
+    height: 80vh;
+    background: url('./cova-software-SdlsfstOQZM-unsplash.jpg') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* // background-color: black; */
+
+}
+
+.touchus-form h1{
+
+    color: white;
+}

@@ -14,30 +14,30 @@ const Index = () => {
                         <div data-v-36dd144c="" class="col-sm-8 row list-container">
                             <div data-v-36dd144c="" class="item col-sm-3 col-10">
                                 <ul data-v-36dd144c="" class="submenu list-unstyled">
-                                    <h3 data-v-36dd144c="">Pakistan</h3>
+                                    <h3 data-v-36dd144c="">UAE</h3>
                                     <li data-v-36dd144c="">
                                         <a data-v-36dd144c="" href="/property" class="entire-card-wrapper" id="view">
-                                            <span data-v-36dd144c="">Zarkon Heights</span>
+                                            <span >Abu Dubia</span>
                                         </a>
                                     </li>
                                     <li data-v-36dd144c="">
                                         <a data-v-36dd144c="" href="/property" class="entire-card-wrapper" id="view">
-                                            <span data-v-36dd144c="">Oriental Tower</span>
+                                            <span data-v-36dd144c="">Umm Al Quwain</span>
                                         </a>
                                     </li>
                                     <li data-v-36dd144c="">
                                         <a data-v-36dd144c="" href="/property" class="entire-card-wrapper" id="view">
-                                            <span data-v-36dd144c="">Kunwar Block</span>
+                                            <span data-v-36dd144c="">Ras Al Khaimah</span>
                                         </a>
                                     </li>
                                     <li data-v-36dd144c="">
                                         <a data-v-36dd144c="" href="/property" class="entire-card-wrapper" id="view">
-                                            <span data-v-36dd144c="">Top City 1</span>
+                                            <span data-v-36dd144c="">Fujairah</span>
                                         </a>
                                     </li>
                                     <li data-v-36dd144c="">
                                         <a data-v-36dd144c="" href="/property" class="entire-card-wrapper" id="view">
-                                            <span data-v-36dd144c="">G 15 Islamabad </span>
+                                            <span data-v-36dd144c="">Sharja </span>
                                         </a>
                                     </li>
                                 </ul>

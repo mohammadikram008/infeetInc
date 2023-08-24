@@ -15,23 +15,17 @@ import News from './components/layouts/News';
 import Aboutus from './components/Aboutus/Index'
 import Contactus from './components/Contact/index'
 import Footer from './components/Footer/Index'
-import Chatus from './components/Chat/Index'
-import Home from './components/Chat/Home'
-import ChatPage from './components/Chat/ChatPage';
-import socketIO from 'socket.io-client';
+
 const MainComponent = React.lazy(() => import('./components/layouts/mainpage/index'));
-const socket = socketIO.connect('http://localhost:8080');
+
 function App() {
-
-
   return (
     <div className="App">
-
       <Suspense fallback={<Fallback/>} >
         {/* <Navbar/> */}
         <Routes>
           <Route path='/' element={  <MainComponent />} /> 
-          <Route path='/learnmore' element={<LearnMore/>} /> 
+          <Route path='/learnmore' element={<Aboutus/>} /> 
           <Route path='/investordashboard' element={<InvestorDashboard/>} /> 
           <Route path='/login' element={<LoginPage/>} /> 
           <Route path='/signup' element={<SignUpPage/>} /> 
@@ -39,14 +33,9 @@ function App() {
           <Route path='/news' element={<News/>} /> 
           <Route path='/about' element={<Aboutus/>} /> 
           <Route path='/contactus' element={<Contactus/>} /> 
-          {/* <Route path='/chat' element={<Chatus/>} />  */}
-          {/* <Route path="/" element={<Home socket={socket} />}></Route>
-          <Route path="/chat" element={<ChatPage socket={socket} />}></Route> */}
         </Routes>
         <Footer/>
         </Suspense>
-
-
     </div>
   );
 }
