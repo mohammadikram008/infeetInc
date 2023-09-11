@@ -7,6 +7,11 @@ import Skeleton from '../SkeletonComponent'
 import { Col, Row } from 'reactstrap'
 import axios from 'axios';
 import toast, { Toaster } from "react-hot-toast";
+import ApartmentCard from '../ApartmentCard'
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 //slider 
 import { UncontrolledCarousel } from 'reactstrap';
 //avatar
@@ -36,6 +41,15 @@ import bgimage from '../../images/bg-images.jpg';
 import Navbar from '../../Navbar/Index';
 
 const Container = () => {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 200,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoPlay :true,
+        autoplaySpeed: 1000
+      };
     const [cardvalue, setCardValue] = useState("");
     // const { Contact } = content;
     const navigate = useNavigate();
@@ -125,31 +139,8 @@ const Container = () => {
     return (
         <Fragment>
             <div id="fh5co-page">
-            <Navbar/>
-                {/* header area */}
-                {/* <header id="fh5co-header" role="banner">
-                    <div className="container">
-                        <div className="row">
-                            <div className="header-inner">
-                                <div className='log-div'>
-                                    <img className="logo-img " src={logo} alt='' />
-                                    <h1 className='mx-3'><a href="/">Infeet Inc.</a></h1>
-                                </div>
-                                <div>
-                                    <nav role="navigation">
-                                        <ul className='ul-item'>
-                                            <li><a>Home</a></li>
-                                            <li><a href='#fh5co-agents'>News</a></li>
-                                            <li><a href='#best-deal'>Resale </a></li>
-                                            <li><a href='#fh5co-blog'>Book a Call</a></li>
-                                            <li className="cta"><a href="#fh5co-blog">login</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </header> */}
+                <Navbar/>
+                
 
 
                 {/* slider area */}
@@ -157,78 +148,6 @@ const Container = () => {
                     <UncontrolledCarousel items={items} />
                 </div>
 
-
-                {/* <aside id="fh5co-hero" clsas="js-fullheight">
-                            <div className="flexslider js-fullheight">
-                                <ul className="slides">
-                                    <li style={{backgroundImage: `url(${s1})`}}>
-                                        <div className="container">
-                                            <div className="col-md-12 text-center js-fullheight fh5co-property-brief slider-text">
-                                                <div className="fh5co-property-brief-inner">
-                                                    <div className="fh5co-box">
-
-                                                        <h3><a href="#">Villa In Hialeah, Dade County</a></h3>
-                                                        <div className="price-status">
-                                                            <span className="price">$540,000 <a href="#" className="tag">For Sale</a></span>
-                                                        </div>
-                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dicta magni amet atque doloremque velit unde adipisci omnis hic quaerat.</p>
-
-                                                        <p className="fh5co-property-specification">
-                                                            <span><strong>3500</strong> Sq Ft</span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span>  <span><strong>2</strong> Garages</span>
-                                                        </p>
-
-                                                        <p><a href="#" className="btn btn-primary">Learn more</a></p>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li style={{backgroundImage: `url(${s2})`}}>
-                                        <div className="container">
-                                            <div className="col-md-12 text-center js-fullheight fh5co-property-brief slider-text">
-                                                <div className="fh5co-property-brief-inner">
-                                                    <div className="fh5co-box">
-                                                        <h3><a href="#">15 Apartments Of Type B</a></h3>
-                                                        <div className="price-status">
-                                                            <span className="price">$2,200<span className="per">/Month</span> <a href="#" className="tag">For Rent</a></span>
-                                                        </div>
-                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dicta magni amet atque doloremque velit unde adipisci omnis hic quaerat.</p>
-                                                        <p className="fh5co-property-specification">
-                                                            <span><strong>3500</strong> Sq Ft</span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span>  <span><strong>2</strong> Garages</span>
-                                                        </p>
-                                                        <p><a href="#" className="btn btn-primary">Learn more</a></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li style={{backgroundImage: `url(${s3})`}}>
-                                        <div className="container">
-                                            <div className="col-md-12 text-center js-fullheight fh5co-property-brief slider-text">
-                                                <div className="fh5co-property-brief-inner">
-                                                    <div className="fh5co-box">
-                                                        <h3><a href="#">401 Biscayne Boulevard, Miami</a></h3>
-                                                        <div className="price-status">
-                                                            <span className="price">$1,540,000 <a href="#" className="tag">For Sale</a></span>
-                                                        </div>
-                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque dicta magni amet atque doloremque velit unde adipisci omnis hic quaerat.</p>
-                                                        <p className="fh5co-property-specification">
-                                                            <span><strong>3500</strong> Sq Ft</span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span>  <span><strong>2</strong> Garages</span>
-                                                        </p>
-                                                        <p><a href="#" className="btn btn-primary">Learn more</a></p>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </aside> */}
 
                 {/* offer  rent area */}
                 <div id="best-deal">
@@ -238,36 +157,32 @@ const Container = () => {
                                 <h2 className='head-text'>TRY OUR VIRTUAL TOURS</h2>
                                 {/* <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p> */}
                             </div>
-                            <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
+                            {/* <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
                                 <div className="fh5co-property" >
                                     <figure>
                                         <img src={pro3} alt="Free Website Templates FreeHTML5.co" className="img-responsive" />
                                         <a href="#" className="tag">long term</a>
                                     </figure>
                                     <div className="fh5co-property-innter">
-                                        {
+      {
                                      cardvalue?
                                         cardvalue &&  cardvalue.data.length > 0 &&
                                             cardvalue.data.slice(0, 1).map((item, index) => (
-                                                <div key={index} onClick={()=>handleNavigation(item)}>
-                                                    <h3><a href="#">{item.appartmentaddres}</a></h3>
+                                                 <div key={index} onClick={()=>handleNavigation(item)}>
+                                                      <h3><a href="#">{item.appartmentaddres}</a></h3>
                                                     <div className="price-status">
                                                         <span className="price">${item.price} </span>
-                                                    </div>
-                                                    <p>CLick for more details....</p>
+                                                                    </div>
+                                                          <p>CLick for more details....</p>
                                                     <p className="fh5co-property-specification">
-                                                        <span><strong>{item.area}</strong></span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span>
+                                                        <span><strong>{item.area}</strong>Sq Ft</span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span>
                                                     </p>
                                                 </div>
 
                                             ))
                                     :<Skeleton/>}
-
                                     </div>
-
                                 </div>
-
-
                             </div>
                             <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
 
@@ -279,8 +194,8 @@ const Container = () => {
                                     <div className="fh5co-property-innter">
                                         {
                                             cardvalue?
-                                        
-                                        cardvalue &&  cardvalue.data.length > 0 &&
+
+cardvalue &&  cardvalue.data.length > 0 &&
                                             cardvalue.data.slice(1, 2).map((item, index) => (
                                                 <div key={index}  onClick={()=>handleNavigation(item)}>
                                                     <h3><a href="#">{item.appartmentaddres}</a></h3>
@@ -289,7 +204,7 @@ const Container = () => {
                                                     </div>
                                                     <p>CLick for more details....</p>
                                                     <p className="fh5co-property-specification">
-                                                        <span><strong>{item.area}</strong></span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span>
+                                                        <span><strong>{item.area}</strong>Sq Ft</span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span>
                                                     </p>
                                                 </div>
 
@@ -329,9 +244,17 @@ const Container = () => {
                                     </div>
 
                                 </div>
-                            </div>
+                            </div> */}
 
-
+                        <Slider {...settings}>
+                                    { cardvalue?
+                                        cardvalue &&  cardvalue.data.length > 0 &&
+                                            cardvalue.data.map((apartment, index) => (
+                                         <div key={index}>
+                                     <ApartmentCard apartment={apartment} />
+                                                 </div>
+                                            )):<Skeleton/>}
+                             </Slider>
                         </div>
                     </div>
                 </div>
@@ -484,7 +407,7 @@ const Container = () => {
                 </div> */}
 
 
-               
+
 
             </div>
 
@@ -493,3 +416,104 @@ const Container = () => {
 }
 
 export default Container
+
+
+// <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
+//                                 <div className="fh5co-property" >
+
+//                                     <div className="fh5co-property-innter">
+//                                         {
+//                                             cardvalue ?
+//                                                 cardvalue && cardvalue.data.length > 0 &&
+//                                                 cardvalue.data.slice(0, 1).map((item, index) => (
+
+//                                                     <div key={index} onClick={() => handleNavigation(item)}>
+//                                                         <figure>
+//                                                             <img src={`http://localhost:3005/${item.image}`} alt="Apartment"  className="img-responsive"/>
+
+//                                                                <a href="#" className="tag">long term</a>
+//                                                         </figure>
+//                                                         <h3><a href="#">{item.appartmentaddres}</a></h3>
+//                                                         <div className="price-status">
+//                                                             <span className="price">${item.price} </span>
+//                                                         </div>
+//                                                         <p>CLick for more details....</p>
+//                                                         <p className="fh5co-property-specification">
+//                                                             <span><strong>{item.area}</strong>Sq Ft</span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span>
+//                                                         </p>
+//                                                     </div>
+
+//                                                 ))
+//                                                 : <Skeleton />}
+
+//                                     </div>
+
+//                                 </div>
+
+
+//                             </div>
+//                             <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
+
+//                                 <div className="fh5co-property">
+                                   
+//                                     <div className="fh5co-property-innter">
+//                                         {
+//                                             cardvalue ?
+
+//                                                 cardvalue && cardvalue.data.length > 0 &&
+//                                                 cardvalue.data.slice(1, 2).map((item, index) => (
+//                                                     <div key={index} onClick={() => handleNavigation(item)}>
+//                                                          <figure>
+//                                                             <img src={`http://localhost:3005/${item.image}`} className="img-responsive"  alt="Apartment" />
+
+//                                                              <a href="#" className="tag">long term</a>
+//                                                         </figure>
+//                                                         <h3><a href="#">{item.appartmentaddres}</a></h3>
+//                                                         <div className="price-status">
+//                                                             <span className="price">${item.price} </span>
+//                                                         </div>
+//                                                         <p>CLick for more details....</p>
+//                                                         <p className="fh5co-property-specification">
+//                                                             <span><strong>{item.area}</strong>Sq Ft</span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span>
+//                                                         </p>
+//                                                     </div>
+
+//                                                 ))
+//                                                 : <Skeleton />}
+//                                     </div>
+
+//                                 </div>
+
+//                             </div>
+//                             <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
+
+//                                 <div className="fh5co-property" >
+                                    
+//                                     <div className="fh5co-property-innter" >
+//                                         {
+//                                             cardvalue ?
+
+//                                                 cardvalue && cardvalue.data.length > 0 &&
+//                                                 cardvalue.data.slice(2).map((item, index) => (
+//                                                     <div key={index} onClick={() => handleNavigation(item)}>
+//                                                         <figure>
+//                                                             <img src={`http://localhost:3005/${item.image}`} className="img-responsive"  alt="Apartment" />
+
+//                                                             <a href="#" className="tag">long term</a>
+//                                                         </figure>
+//                                                         <h3><a href="#">{item.appartmentaddres}</a></h3>
+//                                                         <div className="price-status">
+//                                                             <span className="price">${item.price} </span>
+//                                                         </div>
+//                                                         <p>CLick for more details....</p>
+//                                                         <p className="fh5co-property-specification">
+//                                                             <span><strong>{item.area}</strong> Sq Ft</span>  <span><strong>3</strong> Beds</span>  <span><strong>3.5</strong> Baths</span>
+//                                                         </p>
+//                                                     </div>
+
+//                                                 ))
+//                                                 : <Skeleton />}
+//                                     </div>
+
+//                                 </div>
+//                             </div>
