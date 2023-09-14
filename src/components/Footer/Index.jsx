@@ -5,6 +5,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+import { Link } from 'react-router-dom';
 const Index = () => {
   return (
     <Fragment>
@@ -13,24 +14,24 @@ const Index = () => {
                     <div className="container">
                         <div className="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
                             <h3>What We Do</h3>
-                            <p className='text-white'>InFeet Inc. is a multinational property fractionalization firm that  aims to make investments in real estate more accessible by offering investments "in feet" </p>
+                            <p className='text-white'>"Infeet: Redefining Real Estate Investment.Invest in 'feet,' not properties.Accessible, flexible,and inclusive.Empowering everyone to grow wealth" </p>
                             <p><a href="#" className="btn btn-primary btn-outline with-arrow btn-sm"><ArrowCircleUpIcon fontSize='large' /> </a></p>
                         </div>
                         <div className="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
                             <h3>Our Services</h3>
                             <ul className="float">
                               
-                                <li><a href="/investordashboard">Investor Dashboard</a></li>
-                                <li><a href="#">Infeet Exchange</a></li>
-                                <li><a href="#">Terms of Use</a></li>
+                                <li><Link to="/investordashboard">Investor Dashboard</Link></li>
+                                {/* <li><a href="#">Infeet Exchange</a></li> */}
+                                {/* <li><a href="#">Terms of Use</a></li> */}
                                 <li><a href="#">Privacy Policy</a></li>
                                 <li><a href="#">Careers</a></li>
                             </ul>
                         </div>
                         <div className="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
                             <h3>Our Offices</h3>
-                            <p className='text-white'>Dubia Office placeholder</p>
-                            <p className='text-white'>Office1201,12th Floor  Green Trust Tower,Jinnah Avenue Sector F-6/1 , Islamabad ICT Pakistan </p>
+                            <p className='text-white'>Meydan-Free-Zone ,<br/>Dubai United Arab Emirates</p>
+                            {/* <p className='text-white'>Office1201,12th Floor  Green Trust Tower,Jinnah Avenue Sector F-6/1 , Islamabad ICT Pakistan </p> */}
 
                         </div>
                         <div className="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">

@@ -5,19 +5,23 @@ import img2 from '../images/pro2.jpg'
 import img3 from '../images/pro3.jpg'
 const content = [
   {
-    cont: "InfeetInc has established itself as a prominent construction and engineering company, specializing in the development of housing societies. With an extensive journey in this niche, we have garnered unparalleled experience and expertise. From the initial stages of land surveys, soil testing, and material testing utilizing the latest top-of-the-line technologies, to the meticulous town planning carried out by renowned experts and firms, InfeetInc offers a comprehensive turn-key solution. Our services encompass the transformation of raw land into fully developed plots.    ",
+    cont: "Throughout our lives, we've often heard that real estate is an avenue for the wealthy, an opportunity seemingly reserved for those with substantial financial resources.This prevailing perception has, for far too long, discouraged the common person from venturing into the world of real estate investment, plagued by the misconception that the barrier to entry is insurmountably high. In response to this challenge, we embarked on a mission to democratize real estate investment, making it accessible to individuals from all walks of life, especially those with limited financial means. From this vision, Infeet was born, a unique platform that redefines how we invest in real estate.",
     img: img,
   },
   {
-    cont: "What sets InfeetInc apart is not just our ability to plan and execute projects, but also their unwavering commitment to ensuring legal compliance. We go the extra mile to secure all relevant permissions and approvals from government authorities, guaranteeing that your project is in full accordance with the necessary regulations. This meticulous attention to detail and adherence to legal requirements further solidifies our reputation as a trusted and reliable company.  ",
+    cont: "At Infeet, we believe in breaking down the financial barriers that have traditionally hindered people from participating in this lucrative market. Our innovative approach allows you to invest not in entire properties but in smaller units, referred to as feet.This novel concept empowers you to enter the world of real estate investment, no matter your income level or financial situation. What sets Infeet apart is its commitment to inclusivity. ",
     
   },
   {
-    cont: "We are pleased to introduce our consortium (InfeetInc - Yellow Line Construction) to your esteemed organization. InfeetInc has established itself as a prominent construction and engineering company. With an extensive journey in this niche, we have garnered unparalleled experience and expertise. From the initial stages of land surveys, soil testing, and material testing utilizing the latest top-of-the-line technologies, to the meticulous planning carried out by renowned experts and firms,InfeetInc offers a comprehensive turn-key solution. Our services encompass the transformation of raw land into fully developed Projects. ",
+    cont: "Whether you aim to enjoy the annual property value appreciation, reap the benefits of rental income, or simply follow a tried-and-tested compounding model to rapidly increase your wealth over a short period, Infeet offers flexible options that cater to your specific financial goals and preferences.We understand that venturing into real estate can be daunting, but Infeet is here to guide you every step of the way. Our platform provides you with the knowledge, tools, and support needed to make informed investment decisions.We're not just revolutionizing real estate investment; we're democratizing it, making it accessible to you, the common investor. ",
     img:img2,
   },
   {
-    cont: "In the recent past, we have gained hands-on experience in the development of modern housing, road construction and vertical high-rise buildings through our core construction company Yellow Line Construction (Pvt) LtdWe are pleased to submit Letter of Intent for a joint venture Agreement with your Esteemed Organization for the development .we look forward to hearing from you and thank you in advance. ",
+    cont: " ",
+    
+  },
+  {
+    cont: "Welcome to Infeet, where the world of real estate investment opens its doors to everyone. Join us on this exciting journey towards financial empowerment and a brighter future.",
     img:img3,
   },
 

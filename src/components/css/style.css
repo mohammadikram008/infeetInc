@@ -1850,6 +1850,8 @@ figure {
   }
 }
 
+
+
 #fh5co-page {
   position: relative;
   z-index: 2;
@@ -1869,7 +1871,9 @@ figure {
 #fh5co-page {
   position: relative;
 }
-
+.textarea{
+  padding: 2rem;
+}
 #fh5co-page {
   z-index: 2;
   -webkit-transition: 0.5s;
@@ -2090,7 +2094,10 @@ figure {
     padding: 3em 0;
   }
 }
-
+.img-investor{
+  height: 400px;
+  width: 100%;
+}
 .fh5co-pricing .pricing {
   display: block;
   float: left;
@@ -2302,4 +2309,13 @@ margin-bottom: 100px;
 }
 .fh5co-property{
   width: 100%;
+}
+.App {
+  display: flex;
+  overflow: hidden;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
 }

@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Container } from "@mui/system";
 import {
   AppBar,
@@ -10,7 +10,7 @@ import {
 
 } from "@mui/material";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { Link ,useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Index.css";
 import logo from '../images/infeet circle.jpeg'
 import NavbarContent from '../NavbarContent/Index'
@@ -18,8 +18,8 @@ export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-    const [data, setData] = useState('');
-    const [count, setCount] = useState(0);
+  const [data, setData] = useState('');
+  const [count, setCount] = useState(0);
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -36,14 +36,14 @@ export default function Navbar() {
   const clearData = () => {
     setCount(prevCount => prevCount + 1);
     const storedData = localStorage.getItem('login');
-  
+
     if (storedData) {
       localStorage.removeItem('login');
       setData('');
-    }else{
-        navigate('/login');
+    } else {
+      navigate('/login');
     }
-   
+
   };
   useEffect(() => {
     // Get the data from local storage
@@ -115,26 +115,6 @@ export default function Navbar() {
               }}
               className={navbarOpen ? "toolbar" : ""}
             >
-              {/* <Link
-                to="/"
-                underline="none"
-                className={navbarOpen ? "toolbar-btn" : ""}
-              >
-                <Button
-                  onClick={handleChangeButton}
-                  className="nav-item"
-                  color="inherit"
-                  variant="text"
-                  style={{
-                    color: "black",
-                    margin: "auto 23px",
-                    fontSize: "16px",
-                  }}
-                >
-                  Home
-                </Button>
-              </Link> */}
-
               <Link
                 to="/"
                 underline="none"
@@ -154,7 +134,7 @@ export default function Navbar() {
                     margin: "auto 23px",
                     fontSize: "1.6rem",
                     textTransform: "capitalize",
-                 
+
 
                   }}
                 >
@@ -213,7 +193,7 @@ export default function Navbar() {
 
                 to="/about"
                 underline="none"
-                
+
                 className={navbarOpen ? "toolbar-btn" : "nav-items"}
               >
                 <Button
@@ -228,7 +208,7 @@ export default function Navbar() {
                     // fontFamily: `PublicSans,'sans-serif'`,
                   }}
                 >
-                  About Us
+                  InFeet
                 </Button>
               </Link>
               <span className="line">|</span>
@@ -239,7 +219,7 @@ export default function Navbar() {
                 className={navbarOpen ? "toolbar-btn" : "nav-items"}
               >
                 <Button
-                 
+
                   variant="text"
                   onClick={handleChangeButton}
                   style={{
@@ -251,7 +231,7 @@ export default function Navbar() {
                   }}
                 >
                   Contact Us
-       
+
                 </Button>
               </Link>
 
@@ -310,7 +290,7 @@ export default function Navbar() {
 
                   className="nav-item"
                   variant="text"
-                  onClick={clearData }
+                  onClick={clearData}
                   style={{
                     color: "black",
                     margin: "auto 23px",
@@ -328,7 +308,7 @@ export default function Navbar() {
 
                 // disableElevation
                 >
-              <a >{data?"Logout":"login"}</a>
+                  <a >{data ? "Logout" : "login"}</a>
                 </Button>
               </Link>
               <Link to="/signup">
@@ -354,7 +334,7 @@ export default function Navbar() {
                 // disableElevation
                 >
                   Register
-              {/* <a onClick={clearData }>{data?"Logout":"login"}</a> */}
+                  {/* <a onClick={clearData }>{data?"Logout":"login"}</a> */}
                 </Button>
               </Link>
             </Box>

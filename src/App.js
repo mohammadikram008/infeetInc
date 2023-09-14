@@ -20,7 +20,7 @@ const MainComponent = React.lazy(() => import('./components/layouts/mainpage/ind
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
       <Suspense fallback={<Fallback/>} >
         {/* <Navbar/> */}
         <Routes>

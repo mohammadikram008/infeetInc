@@ -57,14 +57,15 @@ const Container = () => {
     const handleNavigation = (prop) => {
 
         console.log("prop",prop)
-        const storedData = localStorage.getItem('login');
-        if (storedData) {
-            // If data exists in local storage, update the component state
-            //   setData(JSON.parse(storedData));
-            navigate('/investordashboard',{ state: prop });
-        } else {
-            navigate('/login');
-        }
+        navigate('/investordashboard',{ state: prop });
+        // const storedData = localStorage.getItem('login');
+        // if (storedData) {
+        //     // If data exists in local storage, update the component state
+        //     //   setData(JSON.parse(storedData));
+        //     navigate('/investordashboard',{ state: prop });
+        // } else {
+        //     navigate('/login');
+        // }
 
     };
     const form = useRef();
@@ -157,14 +158,24 @@ const Container = () => {
                                 <h2 className='head-text'>TRY OUR VIRTUAL TOURS</h2>
                                 {/* <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p> */}
                             </div>
-                            {/* <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
+                            <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
                                 <div className="fh5co-property" >
                                     <figure>
                                         <img src={pro3} alt="Free Website Templates FreeHTML5.co" className="img-responsive" />
                                         <a href="#" className="tag">long term</a>
                                     </figure>
                                     <div className="fh5co-property-innter">
-      {
+                                    <div onClick={()=>handleNavigation()}>
+                                                      <h3><a href="#">House no 45,Street 45,E11/4</a></h3>
+                                                    <div className="price-status">
+                                                        <span className="price">$450000 </span>
+                                                                    </div>
+                                                          <p>CLick for more details....</p>
+                                                    <p className="fh5co-property-specification">
+                                                        <span><strong>4567</strong>Sq Ft</span>  <span><strong>4</strong> Beds</span>  <span><strong>3</strong> Baths</span>
+                                                    </p>
+                                                </div>
+      {/* {
                                      cardvalue?
                                         cardvalue &&  cardvalue.data.length > 0 &&
                                             cardvalue.data.slice(0, 1).map((item, index) => (
@@ -180,11 +191,11 @@ const Container = () => {
                                                 </div>
 
                                             ))
-                                    :<Skeleton/>}
+                                    :<Skeleton/>} */}
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
+                            {/* <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
 
                                 <div className="fh5co-property">
                                     <figure>
@@ -195,7 +206,7 @@ const Container = () => {
                                         {
                                             cardvalue?
 
-cardvalue &&  cardvalue.data.length > 0 &&
+                                    cardvalue &&  cardvalue.data.length > 0 &&
                                             cardvalue.data.slice(1, 2).map((item, index) => (
                                                 <div key={index}  onClick={()=>handleNavigation(item)}>
                                                     <h3><a href="#">{item.appartmentaddres}</a></h3>
@@ -214,8 +225,8 @@ cardvalue &&  cardvalue.data.length > 0 &&
 
                                 </div>
 
-                            </div>
-                            <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
+                            </div> */}
+                            {/* <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
 
                                 <div className="fh5co-property" >
                                     <figure>
@@ -246,7 +257,7 @@ cardvalue &&  cardvalue.data.length > 0 &&
                                 </div>
                             </div> */}
 
-                        <Slider {...settings}>
+                        {/* <Slider {...settings}>
                                     { cardvalue?
                                         cardvalue &&  cardvalue.data.length > 0 &&
                                             cardvalue.data.map((apartment, index) => (
@@ -254,7 +265,7 @@ cardvalue &&  cardvalue.data.length > 0 &&
                                      <ApartmentCard apartment={apartment} />
                                                  </div>
                                             )):<Skeleton/>}
-                             </Slider>
+                             </Slider> */}
                         </div>
                     </div>
                 </div>
@@ -262,7 +273,7 @@ cardvalue &&  cardvalue.data.length > 0 &&
                 {/* blog area */}
                 <div className="fh5co-section-with-image">
 
-                    <img src={bgabout} alt="" className="img-responsive" />
+                    <img src={bgabout} alt="" className="img-responsives" />
                     <div className="fh5co-box animate-box">
                         <h2>Security, Comfort, &amp; Convenience</h2>
                         <p>How are our properties different from your average fractionalized real estate projects?</p>
@@ -382,7 +393,7 @@ cardvalue &&  cardvalue.data.length > 0 &&
                             <textarea
                                 name="message"
                                 placeholder="Message"
-                                className="input-feild border border-slate-600 mt-4 p-4 m-4 rounded "
+                                className="input-feild border textarea border-slate-600 mt-4  m-4 rounded "
                                 required
                             ></textarea>
                             <button
