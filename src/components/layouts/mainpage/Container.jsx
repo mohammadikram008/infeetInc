@@ -57,7 +57,8 @@ const Container = () => {
     const handleNavigation = (prop) => {
 
         console.log("prop",prop)
-        navigate('/investordashboard',{ state: prop });
+        window.open('https://infeetinvestordashboard.netlify.app/#/property/propertydetail', '_blank');
+        // navigate('/investordashboard',{ state: prop });
         // const storedData = localStorage.getItem('login');
         // if (storedData) {
         //     // If data exists in local storage, update the component state
@@ -106,20 +107,20 @@ const Container = () => {
             src: `https://azizidevelopments.com/assets/images/projects/1603263070389162780.jpg`,
             // altText: 'Slide 1',
             // caption: 'Slide 1',
-            header: 'Buying Real State inFeet'
+            // header: 'Buying Real State inFeet'
         },
         {
             src: `https://azizidevelopments.com/assets/images/projects/15795279721750900140.jpg`,
             // altText: 'Slide 2',
             // caption: 'Slide 2',
-            header: 'Sale Real State in Feet'
+            // header: 'Sale Real State in Feet'
         },
         {
 
             src: `https://azizidevelopments.com/assets/images/projects/1624972383238283745.jpg`,
             // altText: 'Slide 3',
             // caption: 'Slide 3',
-            header: 'Hold Real State in Feet'
+            // header: 'Hold Real State in Feet'
 
 
 
@@ -166,13 +167,13 @@ const Container = () => {
                                     </figure>
                                     <div className="fh5co-property-innter">
                                     <div onClick={()=>handleNavigation()}>
-                                                      <h3><a href="#">House no 45,Street 45,E11/4</a></h3>
+                                                      <h3><a href="#">House no 45, Street 45, E11/4</a></h3>
                                                     <div className="price-status">
-                                                        <span className="price">$450000 </span>
+                                                        <span className="price">$ 450000 </span>
                                                                     </div>
                                                           <p>CLick for more details....</p>
                                                     <p className="fh5co-property-specification">
-                                                        <span><strong>4567</strong>Sq Ft</span>  <span><strong>4</strong> Beds</span>  <span><strong>3</strong> Baths</span>
+                                                        <span><strong>4567</strong>Sqft</span>  <span><strong>4</strong> Beds</span>  <span><strong>3</strong> Baths</span>
                                                     </p>
                                                 </div>
       {/* {
@@ -277,7 +278,7 @@ const Container = () => {
                     <div className="fh5co-box animate-box">
                         <h2>Security, Comfort, &amp; Convenience</h2>
                         <p>How are our properties different from your average fractionalized real estate projects?</p>
-                        <p><Link to="/learnmore" className="btn btn-primary btn-outline with-arrow">Learn more... <i className="icon-arrow-right"></i></Link></p>
+                        <p><Link to="/learnmore" className="submit-btn btn-primary btn-outline with-arrow  mt-3">Learn more... <i className="icon-arrow-right"></i></Link></p>
                     </div>
 
                 </div>
@@ -386,7 +387,7 @@ const Container = () => {
                             <input
                                 type="email"
                                 name="user_email"
-                                placeholder="Email Id"
+                                placeholder="Email "
                                 required
                                 className="input-feild border border-slate-600 mt-4 p-3 rounded "
                             />
@@ -397,7 +398,7 @@ const Container = () => {
                                 required
                             ></textarea>
                             <button
-                                className="btn btn-primary btn-outline with-arrow  mt-4  "
+                                className="submit-btn btn-primary btn-outline with-arrow  mt-4  "
                                 type="submit"
                             >
                                 Submit

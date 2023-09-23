@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import './Index.css'
 import logo from '../images/infeet circle.jpeg'
+import logo2 from '../assets/images/logo2.jpeg'
 const Index = () => {
     return (
         <Fragment>
@@ -12,8 +13,8 @@ const Index = () => {
                             <a data-v-36dd144c="" href="/property" aria-current="page" class="nuxt-link-exact-active nuxt-link-active"> properties</a>
                         </div>
                         <div data-v-36dd144c="" class="col-sm-8 row list-container">
-                            <div data-v-36dd144c="" class="item col-sm-3 col-10">
-                                <ul data-v-36dd144c="" class="submenu list-unstyled">
+                            <div data-v-36dd144c="" class="">
+                                <ul data-v-36dd144c="" class="submenu ">
                                     <h3 data-v-36dd144c="">UAE</h3>
                                     <li data-v-36dd144c="">
                                         <a data-v-36dd144c="" href="/property" class="entire-card-wrapper" id="view">
@@ -45,7 +46,7 @@ const Index = () => {
                             
                         </div>
                         <div data-v-36dd144c="" class="item coverImage col-2 d-sm-flex align-items-center justify-content-center">
-                            <img data-v-36dd144c="" src={logo} class="img-fluid" />
+                            <img data-v-36dd144c="" src={logo2} class="img-fluid" />
                         </div>
                     </div>
                 </div>

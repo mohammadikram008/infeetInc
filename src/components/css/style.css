@@ -791,14 +791,16 @@ figure {
 }
 
 .fh5co-property {
-
+/* width: 200px; */
   box-shadow: 0 10px 14px rgba(0, 0, 0, 0.2);
 }
-
+.submit-btn{
+  padding: 10px;
+}
 .fh5co-property:hover {
   /* outline-color: #118DF0;
   outline: #a80707; */
-  transform: scale(1.1);
+  transform: scale(1.1) ;
 }
 
 #fh5co-hero .flexslider .fh5co-property-brief .fh5co-property-brief-inner .fh5co-box .fh5co-property-specification strong {
@@ -1090,7 +1092,7 @@ figure {
 }
 
 .fh5co-property .fh5co-property-innter {
-  padding: 30px 30px 30px 30px;
+  padding: 10px 10px 10px 10px;
 }
 
 .fh5co-property .fh5co-property-innter p {
@@ -1102,7 +1104,7 @@ figure {
 }
 
 .fh5co-property .fh5co-property-innter h3 {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .fh5co-property .fh5co-property-innter h3 a:hover,

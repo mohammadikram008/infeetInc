@@ -13,6 +13,8 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { Link, useNavigate } from "react-router-dom";
 import "./Index.css";
 import logo from '../images/infeet circle.jpeg'
+import logo2 from '../assets/images/logo2.jpeg'
+import logo3 from '../assets/images/logo3.jpeg'
 import NavbarContent from '../NavbarContent/Index'
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -28,10 +30,12 @@ export default function Navbar() {
 
   async function handleClick() {
     await setNavbarOpen(!navbarOpen);
+    setIsOpen(false);
   }
   const handleChangeButton = () => {
     setNavbarOpen(false);
     setIsOpen(false);
+    // setIsOpen(false);
   }
   const clearData = () => {
     setCount(prevCount => prevCount + 1);
@@ -96,7 +100,7 @@ export default function Navbar() {
               >
 
                 <div className='log-div'>
-                  <img className="logo-img " src={logo} alt='' />
+                  <img className="logo-img " src={logo3} alt='' />
                   <h1>InFeet&nbsp;Inc.</h1>
                 </div>
 
@@ -118,12 +122,12 @@ export default function Navbar() {
               <Link
                 to="/"
                 underline="none"
-                className={navbarOpen ? "toolbar-btn" : "nav-items"}
+                className={navbarOpen ? "toolbar-btn" : ""}
               >
 
 
                 <Button
-                  // className="nav-item"
+                  className="nav-item"
                   onClick={toggleDropdown}
                   // onClick={handleChangeButton}
                   color="inherit"
@@ -146,10 +150,10 @@ export default function Navbar() {
               <Link
                 to="/resale"
                 underline="none"
-                className={navbarOpen ? "toolbar-btn" : "nav-items"}
+                className={navbarOpen ? "toolbar-btn" : ""}
               >
                 <Button
-                  // className="nav-item"
+                  className="nav-item"
                   color="inherit"
                   onClick={handleChangeButton}
                   variant="text"
@@ -164,7 +168,7 @@ export default function Navbar() {
                   Resale
                 </Button>
               </Link>
-              <span className="line">|</span>
+              {/* <span className="line">|</span>
 
               <Link
                 to="/news"
@@ -186,7 +190,7 @@ export default function Navbar() {
                 >
                   News
                 </Button>
-              </Link>
+              </Link> */}
               <span className="line">|</span>
 
               <Link
@@ -194,10 +198,10 @@ export default function Navbar() {
                 to="/about"
                 underline="none"
 
-                className={navbarOpen ? "toolbar-btn" : "nav-items"}
+                className={navbarOpen ? "toolbar-btn" : ""}
               >
                 <Button
-                  // className="nav-item"
+                  className="nav-item"
                   variant="text"
                   onClick={handleChangeButton}
                   style={{
@@ -211,7 +215,7 @@ export default function Navbar() {
                   InFeet
                 </Button>
               </Link>
-              <span className="line">|</span>
+              {/* <span className="line">|</span>
               <Link
 
                 to="/contactus"
@@ -233,7 +237,7 @@ export default function Navbar() {
                   Contact Us
 
                 </Button>
-              </Link>
+              </Link> */}
 
             </Toolbar>
           )}
@@ -292,13 +296,13 @@ export default function Navbar() {
                   variant="text"
                   onClick={clearData}
                   style={{
-                    color: "black",
-                    margin: "auto 23px",
+                    color: "white",
+                    // margin: "auto px",
                     fontSize: "16px",
                     fontWeight: "600",
                     // border: "1px solid #A6A8AA",
                     borderRadius: "10px",
-                    backgroundColor: "white",
+                    // backgroundColor: "white",
                     textTransform: "capitalize",
                     letterSpacing: "-0.1px"
 
@@ -311,6 +315,7 @@ export default function Navbar() {
                   <a >{data ? "Logout" : "login"}</a>
                 </Button>
               </Link>
+              <span className="line">|</span>
               <Link to="/signup">
                 <Button
 
@@ -318,12 +323,12 @@ export default function Navbar() {
                   variant="text"
                   style={{
                     color: "white",
-                    margin: "auto 23px",
+                    margin: "auto 5px",
                     fontSize: "16px",
                     fontWeight: "550",
                     // border: "1px solid #A6A8AA",
                     borderRadius: "10px",
-                    backgroundColor: "#ca974b",
+                    // backgroundColor: "white",
                     textTransform: "capitalize",
                     letterSpacing: "-0.1px"
 

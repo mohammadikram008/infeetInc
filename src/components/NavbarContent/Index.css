@@ -15,16 +15,12 @@
 .submenu {
     color: black;
     list-style: none;
+   
 
 
 
 }
-@media (max-width: 700px) {
-    .main-row {
-        display: none;
-        
-    }
- }
+
 .submenu li a {
     text-decoration: none;
     color: rgb(180, 182, 184);
@@ -50,3 +46,32 @@
 
 
 }
+@media (max-width: 700px) {
+    /* .main-row {
+        display: none;
+        
+    } */
+    .title{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;  
+    }
+    .submenu li{
+        width: 500px;
+    }
+    .main-container{
+       
+        margin-top: -160px;
+
+    }
+    .coverImage{
+        display: none;
+    }
+    .main-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+ }
