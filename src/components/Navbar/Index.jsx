@@ -9,6 +9,16 @@ import {
   Button,
 
 } from "@mui/material";
+import {
+  Navbar as RSNavbar,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from 'reactstrap';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { Link, useNavigate } from "react-router-dom";
 import "./Index.css";
@@ -37,7 +47,7 @@ export default function Navbar() {
     setIsOpen(false);
     // setIsOpen(false);
   }
-  const clearData = () => {
+  const clearData = (props) => {
     setCount(prevCount => prevCount + 1);
     const storedData = localStorage.getItem('login');
 
@@ -45,6 +55,7 @@ export default function Navbar() {
       localStorage.removeItem('login');
       setData('');
     } else {
+      console.log("props",props)
       navigate('/login');
     }
 
@@ -119,7 +130,7 @@ export default function Navbar() {
               }}
               className={navbarOpen ? "toolbar" : ""}
             >
-              <Link
+              {/* <Link
                 to="/"
                 underline="none"
                 className={navbarOpen ? "toolbar-btn" : ""}
@@ -167,7 +178,7 @@ export default function Navbar() {
                 >
                   Resale
                 </Button>
-              </Link>
+              </Link> */}
               {/* <span className="line">|</span>
 
               <Link
@@ -191,9 +202,9 @@ export default function Navbar() {
                   News
                 </Button>
               </Link> */}
-              <span className="line">|</span>
+              {/* <span className="line">|</span> */}
 
-              <Link
+              {/* <Link
 
                 to="/about"
                 underline="none"
@@ -214,7 +225,7 @@ export default function Navbar() {
                 >
                   InFeet
                 </Button>
-              </Link>
+              </Link> */}
               {/* <span className="line">|</span>
               <Link
 
@@ -289,12 +300,12 @@ export default function Navbar() {
                   Sign-In
                 </Button>
               </Link> */}
-              <Link to="/login">
+              {/* <Link to="/login"> */}
+              <div className="dropdown">
                 <Button
-
-                  className="nav-item"
+                  className="nav-item dropbtn"
                   variant="text"
-                  onClick={clearData}
+                  
                   style={{
                     color: "white",
                     // margin: "auto px",
@@ -305,18 +316,32 @@ export default function Navbar() {
                     // backgroundColor: "white",
                     textTransform: "capitalize",
                     letterSpacing: "-0.1px"
-
-
                   }}
-
 
                 // disableElevation
                 >
                   <a >{data ? "Logout" : "login"}</a>
                 </Button>
-              </Link>
+                {/* </Link> */}
+                <div className="dropdown-content">
+              
+                  <Link  to='/login' onClick={()=>clearData("Investor")} >Investor</Link>
+                  <Link  to='/login'  onClick={()=>clearData("Manager")}>Manager</Link>
+                </div>
+              </div>
+              {/* <RSNavbar color="light" light expand="md">
+                <Nav className="ml-auto" navbar>
+                  <UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav caret>
+                      Dropdown
+                    </DropdownToggle>
+                   
+                  </UncontrolledDropdown>
+                </Nav>
+              </RSNavbar> */}
               <span className="line">|</span>
-              <Link to="/signup">
+              {/* <Link to="/signup"> */}
+              <div className="dropdown">
                 <Button
 
                   className="nav-item"
@@ -341,7 +366,12 @@ export default function Navbar() {
                   Register
                   {/* <a onClick={clearData }>{data?"Logout":"login"}</a> */}
                 </Button>
-              </Link>
+                <div className="dropdown-content">
+                  <Link to='/signup' onClick={()=>clearData("Investor")} >Investor</Link>
+                  <Link to='/signup'  onClick={()=>clearData("Manager")}>Manager</Link>
+                </div>
+                </div>
+              {/* </Link> */}
             </Box>
           )}
         </Container>

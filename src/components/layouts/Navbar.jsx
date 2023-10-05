@@ -39,7 +39,7 @@ const Navbar = () => {
                                     <h1 className='mx-3'><Link to="/">InFeet Inc.</Link></h1>
                                 </div>
                                 <div>
-                                    <nav role="navigation">
+                                    {/* <nav role="navigation">
                                         <ul className='ul-item'>
                                             <li><Link to='/'>Home</Link></li>
                                             <li><Link to='/news'>News</Link></li>
@@ -47,7 +47,7 @@ const Navbar = () => {
                                             <li><a href='#fh5co-blog'>Book a Call</a></li>
                                             <li className="cta" onClick={clearData }><a>{data?"Logout":"login"}</a></li>
                                         </ul>
-                                    </nav>
+                                    </nav> */}
                                 </div>
                             </div>
                         </div>

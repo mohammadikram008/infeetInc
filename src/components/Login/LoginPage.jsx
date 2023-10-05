@@ -6,6 +6,7 @@ import './Index.css'
 import bgimg from '../images/bg-images.jpg'
 import Snackbar from '../layouts/SnackBar'
 import Navbar from '../Navbar/Index';
+import { Divider } from '@mui/material';
 const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -59,6 +60,9 @@ const LoginPage = () => {
             <Navbar/>
             <Snackbar open={open} message={message} setOpen={setOpen} />
             <Row className=' login'  >
+          <div className='login-heading'>
+              <h1 className=''> LogIn</h1>
+            </div>
                 <Col md="4" className=''>
                 </Col>
                 <Col md="4">
@@ -67,30 +71,31 @@ const LoginPage = () => {
                         {error && <p>{error}</p>}
                         <form
                             onSubmit={handleSubmit}
-                            className="touchus-form"
+                            className="touchus-form touchus-form-login"
                         >
 
-                            <h1>Login Form</h1>
+                           
                             <input
                                 type="email" value={username} onChange={handleUsernameChange}
                                 required
-                                placeholder='Email here'
-                                className="input-feild border border-slate-600 mt-4 p-3 rounded"
+                                placeholder='Enter  Email here '
+                                className="input-feild border border-slate-600 mt-4 p-3 rounded w-50"
                             />
                             <input
                                 type="password" value={password} onChange={handlePasswordChange}
                                 required
-                                placeholder='Password here'
-                                className="input-feild border border-slate-600 mt-4 p-3 rounded "
+                                placeholder='Enter  Password here'
+                                className="input-feild border border-slate-600 mt-4 p-3 rounded w-50"
                             />
 
                             <button
-                                className="btn btn-primary btn-outline with-arrow  mt-4 text-white  "
+                                className="submit-btn btn-primary btn-outline with-arrow  mt-4 text-white w-50 "
                                 type="submit"
                             >
                                 Login
                             </button>
-                            <a href='/signup' className='text-white'><p>Create Account!</p></a>
+                            {/* <Divider color='white'/> */}
+                            <a href='/signup' className='text-white mt-5'><p>Create Account</p></a>
                         </form>
                         {/* <form onSubmit={handleSubmit}>
                             <div>

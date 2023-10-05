@@ -6,6 +6,7 @@
     margin-left: 0px;
     margin-right: 0px;
     margin-top: -17px;
+    color: white;
     height: 80vh;
     background: url('./cova-software-SdlsfstOQZM-unsplash.jpg') ;
     background-repeat: no-repeat;
@@ -14,8 +15,16 @@
     /* // background-color: black; */
 
 }
-
-.touchus-form h1{
+.login-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.touchus-form-login h1{
 
     color: white;
+}
+.touchus-form-login{
+    margin-top: -10rem;
 }

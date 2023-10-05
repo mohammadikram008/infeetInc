@@ -1,7 +1,7 @@
 import React, { Fragment, useRef, useEffect, useState, createElement } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
-
+import './Properties.css'
 import emailjs from "@emailjs/browser";
 import Skeleton from '../SkeletonComponent'
 import { Col, Row } from 'reactstrap'
@@ -19,7 +19,7 @@ import avatar1 from '../../images/avatar1.png'
 import avatar2 from '../../images/avatar2.png'
 import avatar3 from '../../images/avatar4.png'
 import bgabout from '../../images/bg-agents.jpg'
-
+import pakistanflag from './pk.png'
 //imagesimport s1 from '../../images/slide_1.jpg'
 import s2 from '../../images/slide_2.jpg'
 import pro2 from '../../images/pro2.jpg'
@@ -42,7 +42,7 @@ import Navbar from '../../Navbar/Index';
 
 const Container = () => {
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 200,
         slidesToShow: 2,
@@ -57,7 +57,7 @@ const Container = () => {
     const handleNavigation = (prop) => {
 
         console.log("prop",prop)
-        window.open('https://infeetinvestordashboard.netlify.app/#/property/propertydetail', '_blank');
+        window.open('https://infeetinvestordashboard.netlify.app/#/explore/propertydetail', '_blank');
         // navigate('/investordashboard',{ state: prop });
         // const storedData = localStorage.getItem('login');
         // if (storedData) {
@@ -156,11 +156,42 @@ const Container = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-8 col-md-offset-2 text-center  animate-box mb-5" data-animate-effect="fadeIn">
-                                <h2 className='head-text'>TRY OUR VIRTUAL TOURS</h2>
-                                {/* <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p> */}
-                            </div>
+                                <h2 className='head-text'>Browse Properties</h2>
+                                </div>
                             <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
-                                <div className="fh5co-property" >
+                                 <div className="mian-proprty-div" data-animate-effect="fadeIn">
+                        <div className="fh5co-property" >
+                            
+                            <div className="custom-carousel">
+                                <UncontrolledCarousel  {...settings} items={items} />
+                            </div>
+                        
+                            <div className="fh5co-property-innter">
+                          
+                            <span className="rented">
+                                 <img src={pakistanflag}/>Islamabad
+                                 </span>
+                                 <span className="rented mx-5">Rented</span>
+                                <div className='contain-div ' onClick={() => handleNavigation()}>
+                                    <h5 >House no 45, Street 45, E-11/4</h5>
+                                    <div className="price-status">
+                                        <Row>
+                                            <Col></Col>
+                                        </Row>
+                                        <span className="price">PKR 450,000 </span> <span className="investor">Investors: 6778</span>
+                                    </div>
+                                    <p className="fh5co-property-specification p-4">
+                                      <span>Area:</span>  <span><strong>4567</strong>  Sqft</span><br/>
+                                      <span>funded Date:</span>  <span><strong>4/5/2022</strong></span><br/>
+                                      <span>Current Vale:</span>  <span><strong> PKR 488,900</strong></span>
+                                    </p>
+                                    <p>Click for more details...</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div> 
+                                {/* <div className="fh5co-property" >
                                     <figure>
                                         <img src={pro3} alt="Free Website Templates FreeHTML5.co" className="img-responsive" />
                                         <a href="#" className="tag">long term</a>
@@ -175,8 +206,8 @@ const Container = () => {
                                                     <p className="fh5co-property-specification">
                                                         <span><strong>4567</strong>Sqft</span>  <span><strong>4</strong> Beds</span>  <span><strong>3</strong> Baths</span>
                                                     </p>
-                                                </div>
-      {/* {
+                                    </div>
+      {
                                      cardvalue?
                                         cardvalue &&  cardvalue.data.length > 0 &&
                                             cardvalue.data.slice(0, 1).map((item, index) => (
@@ -192,9 +223,9 @@ const Container = () => {
                                                 </div>
 
                                             ))
-                                    :<Skeleton/>} */}
+                                    :<Skeleton/>} 
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                             {/* <div className="col-md-4 item-block animate-box" data-animate-effect="fadeIn">
 
@@ -278,7 +309,7 @@ const Container = () => {
                     <div className="fh5co-box animate-box">
                         <h2>Security, Comfort, &amp; Convenience</h2>
                         <p>How are our properties different from your average fractionalized real estate projects?</p>
-                        <p><Link to="/learnmore" className="submit-btn btn-primary btn-outline with-arrow  mt-3">Learn more... <i className="icon-arrow-right"></i></Link></p>
+                        <p className='mt-5'><Link to="/learnmore" className="submit-btn btn-primary btn-outline with-arrow  ">Learn more... <i className="icon-arrow-right"></i></Link></p>
                     </div>
 
                 </div>
@@ -363,7 +394,7 @@ const Container = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-6 col-md-offset-3 text-center  fh5co-heading animate-box" data-animate-effect="fadeIn">
-                                <h2>Book<em> a</em> Call</h2>
+                                <h2>Book a Call</h2>
                                 <p>ENQUIRE NOW </p>
                             </div>
                         </div>
