@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import { Col, Row } from 'reactstrap'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Snackbar from '../layouts/SnackBar'
 import Navbar from '../Navbar/Index';
 import './Index.css'
@@ -87,7 +87,7 @@ const SignUpPage = () => {
                             >
                                 Sign Up
                             </button>
-                            <a href='/login' className='text-white mt-5'><p>Already have account</p></a>
+                            <Link href='/login' className='text-white mt-5'><p>Already have account</p></Link>
                         </form>
                     </div>
                 </Col>

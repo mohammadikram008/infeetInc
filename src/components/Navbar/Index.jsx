@@ -20,16 +20,17 @@ import {
   DropdownItem,
 } from 'reactstrap';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import "./Index.css";
 import logo from '../images/infeet circle.jpeg'
 import logo2 from '../assets/images/logo2.jpeg'
 import logo3 from '../assets/images/logo3.jpeg'
 import NavbarContent from '../NavbarContent/Index'
 export default function Navbar() {
+  const navigate = useNavigate();
+  // const history = useHistory();
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
   const [data, setData] = useState('');
   const [count, setCount] = useState(0);
   const toggleDropdown = () => {
@@ -55,8 +56,18 @@ export default function Navbar() {
       localStorage.removeItem('login');
       setData('');
     } else {
-      console.log("props",props)
-      navigate('/login');
+      console.log("props", props)
+      if (props === "Manager") {
+
+        console.log("propsm", props)
+        // history.push({ pathname: "/login", state: props });
+        // navigate('/login',{state:"manager"});
+        // navigate('/login', { state: "manager"});
+        // navigate('/login', { state: "manager" });
+
+      } else {
+        console.log("propsI", props)
+      }
     }
 
   };
@@ -305,7 +316,7 @@ export default function Navbar() {
                 <Button
                   className="nav-item dropbtn"
                   variant="text"
-                  
+
                   style={{
                     color: "white",
                     // margin: "auto px",
@@ -324,9 +335,9 @@ export default function Navbar() {
                 </Button>
                 {/* </Link> */}
                 <div className="dropdown-content">
-              
-                  <Link  to='/login' onClick={()=>clearData("Investor")} >Investor</Link>
-                  <Link  to='/login'  onClick={()=>clearData("Manager")}>Manager</Link>
+
+                  <Link to='/login'  state={{ fromHome: ""  }} onClick={() => clearData("Investor")} >Investor</Link>
+                  <Link to='/login' state={{ fromHome: "manager"  }} onClick={() => clearData("Manager")}>Manager</Link>
                 </div>
               </div>
               {/* <RSNavbar color="light" light expand="md">
@@ -367,10 +378,10 @@ export default function Navbar() {
                   {/* <a onClick={clearData }>{data?"Logout":"login"}</a> */}
                 </Button>
                 <div className="dropdown-content">
-                  <Link to='/signup' onClick={()=>clearData("Investor")} >Investor</Link>
-                  <Link to='/signup'  onClick={()=>clearData("Manager")}>Manager</Link>
+                  <Link to='/signup' onClick={() => clearData("Investor")} >Investor</Link>
+                  {/* <Link to='/signup' onClick={() => clearData("Manager")}>Manager</Link> */}
                 </div>
-                </div>
+              </div>
               {/* </Link> */}
             </Box>
           )}
