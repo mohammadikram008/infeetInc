@@ -13,8 +13,16 @@
     /* // background-color: black; */
 
 }
-
+.emailreqtext{
+color: red;
+}
 .touchus-form h1{
 
+    color: white;
+}
+.login-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
 }

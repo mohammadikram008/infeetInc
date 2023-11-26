@@ -11,7 +11,7 @@ import ApartmentCard from '../ApartmentCard'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
+import { ApiHeader } from '../../APILinks/Links';
 //slider 
 import { UncontrolledCarousel } from 'reactstrap';
 //avatar
@@ -57,7 +57,7 @@ const Container = () => {
     const handleNavigation = (prop) => {
 
         console.log("prop",prop)
-        window.open('https://infeetinvestordashboard.netlify.app/#/explore/propertydetail', '_blank');
+        window.open('http://infeetinvestordashboard.s3-website.ap-south-1.amazonaws.com', '_blank');
         // navigate('/investordashboard',{ state: prop });
         // const storedData = localStorage.getItem('login');
         // if (storedData) {
@@ -127,7 +127,7 @@ const Container = () => {
         }
     ];
     useEffect(() => {
-        axios.get('http://localhost:3005/api/tasks/')
+        axios.get(`${ApiHeader}/api/tasks/`)
             .then((res) => {
                 setCardValue(res);
             })
@@ -472,7 +472,7 @@ export default Container
 
 //                                                     <div key={index} onClick={() => handleNavigation(item)}>
 //                                                         <figure>
-//                                                             <img src={`http://localhost:3005/${item.image}`} alt="Apartment"  className="img-responsive"/>
+//                                                             <img src={`${ApiHeader}/${item.image}`} alt="Apartment"  className="img-responsive"/>
 
 //                                                                <a href="#" className="tag">long term</a>
 //                                                         </figure>
@@ -507,7 +507,7 @@ export default Container
 //                                                 cardvalue.data.slice(1, 2).map((item, index) => (
 //                                                     <div key={index} onClick={() => handleNavigation(item)}>
 //                                                          <figure>
-//                                                             <img src={`http://localhost:3005/${item.image}`} className="img-responsive"  alt="Apartment" />
+//                                                             <img src={`${ApiHeader}/${item.image}`} className="img-responsive"  alt="Apartment" />
 
 //                                                              <a href="#" className="tag">long term</a>
 //                                                         </figure>
@@ -540,7 +540,7 @@ export default Container
 //                                                 cardvalue.data.slice(2).map((item, index) => (
 //                                                     <div key={index} onClick={() => handleNavigation(item)}>
 //                                                         <figure>
-//                                                             <img src={`http://localhost:3005/${item.image}`} className="img-responsive"  alt="Apartment" />
+//                                                             <img src={`${ApiHeader}/${item.image}`} className="img-responsive"  alt="Apartment" />
 
 //                                                             <a href="#" className="tag">long term</a>
 //                                                         </figure>

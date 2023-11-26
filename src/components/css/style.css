@@ -1273,7 +1273,9 @@ margin-left: 30px;
     padding: 3em 0 10px 0;
   }
 }
-
+.input-feild{
+width: 73%;
+}
 .input-feild:focus {
   color: #3b5998;
   /* background-color: #3cf; */

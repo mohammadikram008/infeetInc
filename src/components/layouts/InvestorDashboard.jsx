@@ -67,7 +67,7 @@ const InvestorDashboard = () => {
                     <figure>
                         <img src={pro3} className="img-investor" alt="Apartment" />
                    
-                        {/* <img src={`http://localhost:3005/${data.image}`} className="img-investor" alt="Apartment" /> */}
+                        {/* <img src={`${ApiHeader}/${data.image}`} className="img-investor" alt="Apartment" /> */}
                     </figure>
                 </Col>
             </Row>

@@ -20,7 +20,7 @@ import {
   DropdownItem,
 } from 'reactstrap';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { Link, useNavigate  } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Index.css";
 import logo from '../images/infeet circle.jpeg'
 import logo2 from '../assets/images/logo2.jpeg'
@@ -33,6 +33,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState('');
   const [count, setCount] = useState(0);
+  const [dropdownClick,setDropdownClick]=useState(false)
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -50,6 +51,7 @@ export default function Navbar() {
   }
   const clearData = (props) => {
     setCount(prevCount => prevCount + 1);
+    setDropdownClick(false)
     const storedData = localStorage.getItem('login');
 
     if (storedData) {
@@ -316,7 +318,7 @@ export default function Navbar() {
                 <Button
                   className="nav-item dropbtn"
                   variant="text"
-
+                  onClick={() => setDropdownClick(true)}
                   style={{
                     color: "white",
                     // margin: "auto px",
@@ -331,14 +333,19 @@ export default function Navbar() {
 
                 // disableElevation
                 >
-                  <a >{data ? "Logout" : "login"}</a>
+                  {data ? "Logout" : "login"}
                 </Button>
                 {/* </Link> */}
-                <div className="dropdown-content">
+                {
+                  dropdownClick ?
+                  <div className="dropdown-content">
 
-                  <Link to='/login'  state={{ fromHome: ""  }} onClick={() => clearData("Investor")} >Investor</Link>
-                  <Link to='/login' state={{ fromHome: "manager"  }} onClick={() => clearData("Manager")}>Manager</Link>
+                  <Link to='/login' state={{ fromHome: "" }} onClick={() => clearData("Investor")} >Investor</Link>
+                  <Link to='/login' state={{ fromHome: "manager" }} onClick={() => clearData("Manager")}>Manager</Link>
                 </div>
+                  :""
+                }
+          
               </div>
               {/* <RSNavbar color="light" light expand="md">
                 <Nav className="ml-auto" navbar>
@@ -350,11 +357,11 @@ export default function Navbar() {
                   </UncontrolledDropdown>
                 </Nav>
               </RSNavbar> */}
-              <span className="line">|</span>
+              {/* <span className="line">|</span> */}
               {/* <Link to="/signup"> */}
               <div className="dropdown">
                 <Button
-
+                  onClick={() => clearData("Investor")}
                   className="nav-item"
                   variant="text"
                   style={{
@@ -374,13 +381,13 @@ export default function Navbar() {
 
                 // disableElevation
                 >
-                  Register
+                  <Link to='/signup'    >SignUp</Link>
                   {/* <a onClick={clearData }>{data?"Logout":"login"}</a> */}
                 </Button>
-                <div className="dropdown-content">
+                {/* <div className="dropdown-content">
                   <Link to='/signup' onClick={() => clearData("Investor")} >Investor</Link>
-                  {/* <Link to='/signup' onClick={() => clearData("Manager")}>Manager</Link> */}
-                </div>
+                  <Link to='/signup' onClick={() => clearData("Manager")}>Manager</Link>
+                </div> */}
               </div>
               {/* </Link> */}
             </Box>

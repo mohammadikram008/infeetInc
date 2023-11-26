@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { ApiHeader } from '../APILinks/Links';
 function ApartmentCard({ apartment }) {
     const navigate = useNavigate();
     const handleNavigation = (prop) => {
@@ -27,7 +28,7 @@ function ApartmentCard({ apartment }) {
                             )}
                         >
                             <figure>
-                                <img src={`http://localhost:3005/${apartment.image}`} className="img-responsive" alt="Apartment" />
+                                <img src={`${ApiHeader}/${apartment.image}`} className="img-responsive" alt="Apartment" />
                                 <a href="#" className="tag">long term</a>
                             </figure>
                             <h3><a href="#">{apartment.appartmentaddres}</a></h3>
@@ -45,7 +46,7 @@ function ApartmentCard({ apartment }) {
                 </div>
             </div>
             {/* <div className="card">
-            <img src={`http://localhost:3005/${apartment.image}`} alt="Apartment" />
+            <img src={`${ApiHeader}/${apartment.image}`} alt="Apartment" />
             <h3>{apartment.appartmentaddres}</h3>
             <div className="price-status">
                 <span className="price">${apartment.price} </span>
